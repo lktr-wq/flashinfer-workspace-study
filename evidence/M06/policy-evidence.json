@@ -1,0 +1,79 @@
+{
+  "stage": "S03-M04",
+  "classification": "1_to_2",
+  "policy_version": "s03-m04-pr5236-host-bound-v1",
+  "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+  "upstream": {
+    "repository": "flashinfer-ai/flashinfer",
+    "pr": 5236,
+    "pr_url": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+    "head_sha": "fdf3c5142b27dc34b8c2cb1aa8fe8910add79486",
+    "state_checked_2026_10_23": "closed_unmerged",
+    "license": "Apache-2.0",
+    "attribution": "FlashInfer contributors, PR5236 author lesj0610",
+    "scheduler_raw_url": "https://raw.githubusercontent.com/flashinfer-ai/flashinfer/fdf3c5142b27dc34b8c2cb1aa8fe8910add79486/include/flashinfer/attention/scheduler.cuh",
+    "utils_raw_url": "https://raw.githubusercontent.com/flashinfer-ai/flashinfer/fdf3c5142b27dc34b8c2cb1aa8fe8910add79486/include/flashinfer/utils.cuh",
+    "scheduler_function_lines": [
+      1003,
+      1103
+    ],
+    "scheduler_original_excerpt": "inline cudaError_t PrefillPlanWorkspaceSizeUpperBound(\n    size_t& float_workspace_size_in_bytes, size_t& int_workspace_size_in_bytes,\n    uint32_t max_batch_size, uint32_t max_total_num_rows, uint32_t max_num_pages_per_request,\n    uint32_t num_qo_heads, uint32_t num_kv_heads, uint32_t head_dim_qk, uint32_t head_dim_vo,\n    uint32_t page_size, bool enable_cuda_graph, int32_t fixed_split_size, bool disable_split_kv,\n    int64_t num_colocated_ctas, uint32_t kv_dtype_bytes = 2) {\n  float_workspace_size_in_bytes = 0;\n  int_workspace_size_in_bytes = 0;\n  if (num_qo_heads % num_kv_heads != 0) {\n    std::ostringstream err_msg;\n    err_msg << \"num_qo_heads \" << num_qo_heads << \" should be divisible by num_kv_heads \"\n            << num_kv_heads;\n    FLASHINFER_ERROR(err_msg.str());\n  }\n  if (max_batch_size == 0 || max_total_num_rows == 0) {\n    return cudaSuccess;\n  }\n\n  int num_sm = 0;\n  int dev_id = 0;\n  FLASHINFER_CUDA_CALL(cudaGetDevice(&dev_id));\n  FLASHINFER_CUDA_CALL(cudaDeviceGetAttribute(&num_sm, cudaDevAttrMultiProcessorCount, dev_id));\n  // Mirrors PrefillPlanImpl.\n  const int num_blocks_per_sm = 2;\n  const int64_t available_ctas =\n      static_cast<int64_t>(num_blocks_per_sm) * num_sm - num_colocated_ctas;\n  const uint32_t max_grid_size = static_cast<uint32_t>(std::max<int64_t>(0, available_ctas));\n  const uint64_t max_batch_size_if_split = max_grid_size / num_kv_heads;\n\n  const uint64_t gqa_group_size = num_qo_heads / num_kv_heads;\n  const uint64_t total_packed_rows = uint64_t(max_total_num_rows) * gqa_group_size;\n  const uint64_t max_chunks_kv =\n      (!disable_split_kv && fixed_split_size > 0)\n          ? ceil_div(uint64_t(std::max(max_num_pages_per_request, 1u)), uint64_t(fixed_split_size))\n          : 1;\n\n  for (const uint32_t cta_tile_q : kFA2CtaTileQCandidates) {\n    // Any distribution of total_packed_rows over max_batch_size requests.\n    const uint64_t max_num_tiles_q =\n        ceil_div(total_packed_rows, uint64_t(cta_tile_q)) + max_batch_size;\n\n    uint64_t padded_batch_size_if_split;\n    bool split_kv_reachable;\n    if (disable_split_kv) {\n      split_kv_reachable = enable_cuda_graph;\n      padded_batch_size_if_split = max_num_tiles_q;\n    } else if (fixed_split_size > 0) {\n      split_kv_reachable = true;\n      padded_batch_size_if_split = max_num_tiles_q * max_chunks_kv;\n    } else {\n      split_kv_reachable = true;\n      padded_batch_size_if_split = max_batch_size_if_split;\n    }\n    if (enable_cuda_graph) {\n      padded_batch_size_if_split = std::max<uint64_t>(\n          max_batch_size_if_split, std::max<uint64_t>(padded_batch_size_if_split, max_num_tiles_q));\n    }\n    // Without split_kv the planner still sizes the index arrays from the tile\n    // count, so the int workspace has to cover the larger of the two.\n    const uint64_t padded_batch_size_for_int =\n        std::max<uint64_t>(max_num_tiles_q, padded_batch_size_if_split);\n\n    AlignedAllocator int_allocator;\n    int_allocator.aligned_alloc_offset(sizeof(IdType) * padded_batch_size_for_int, 16,\n                                       \"batch_prefill_request_indices\");\n    int_allocator.aligned_alloc_offset(sizeof(IdType) * padded_batch_size_for_int, 16,\n                                       \"batch_prefill_qo_tile_indices\");\n    int_allocator.aligned_alloc_offset(sizeof(IdType) * padded_batch_size_for_int, 16,\n                                       \"batch_prefill_kv_tile_indices\");\n    int_allocator.aligned_alloc_offset(sizeof(IdType) * (uint64_t(max_batch_size) + 1), 16,\n                                       \"batch_prefill_o_indptr\");\n    int_allocator.aligned_alloc_offset(sizeof(IdType), 1, \"batch_prefill_kv_chunk_size_ptr\");\n    if (enable_cuda_graph) {\n      int_allocator.aligned_alloc_offset(sizeof(uint32_t), 16, \"batch_prefill_total_num_rows\");\n    }\n\n    AlignedAllocator float_allocator;\n    if (split_kv_reachable) {\n      float_allocator.aligned_alloc_offset(uint64_t(num_qo_heads) * padded_batch_size_if_split *\n                                               cta_tile_q * head_dim_vo * sizeof(float),\n                                           16, \"batch_prefill_tmp_v\");\n      float_allocator.aligned_alloc_offset(\n          uint64_t(num_qo_heads) * padded_batch_size_if_split * cta_tile_q * sizeof(float), 16,\n          \"batch_prefill_tmp_s\");\n      int_allocator.aligned_alloc_offset(sizeof(IdType) * (uint64_t(max_total_num_rows) + 1), 16,\n                                         \"batch_prefill_merge_indptr\");\n      int_allocator.aligned_alloc_offset(sizeof(bool) * padded_batch_size_for_int, 16,\n                                         \"batch_prefill_block_valid_mask\");\n    }\n\n    float_workspace_size_in_bytes =\n        std::max(float_workspace_size_in_bytes, float_allocator.num_allocated_bytes());\n    int_workspace_size_in_bytes =\n        std::max(int_workspace_size_in_bytes, int_allocator.num_allocated_bytes());\n  }\n\n  (void)head_dim_qk;\n  (void)page_size;\n  (void)kv_dtype_bytes;\n  return cudaSuccess;\n}"
+  },
+  "vendor_files": [
+    {
+      "path": "vendor/pr5236/scheduler.cuh",
+      "sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+      "compiled": false
+    },
+    {
+      "path": "vendor/pr5236/utils.cuh",
+      "sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+      "compiled": false
+    }
+  ],
+  "port": {
+    "implementation": "workspace_policy.py",
+    "method": "Host Python port of PR5236 allocator bound; existing compiled workspace_size provides concrete boundary witnesses",
+    "new_increment": "Startup serving integration: admit the actual configured route, choose bounded workspace once before KV profiling, retain source and decision records",
+    "new_kernel": false,
+    "new_compilation_required": false,
+    "current_dtype": "BF16",
+    "current_device": "SM89",
+    "current_qkv_shape": "12Q heads, 2KV heads, 128 head dimension",
+    "current_pages": 16,
+    "split": "automatic",
+    "num_colocated_ctas": 0,
+    "tile_candidates": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "uniform_q_len_coverage": "For every batch distribution, including uniform positive query lengths, sum ceil(q_i*G/t) <= ceil(R*G/t)+B; all possible selector tiles are included.",
+    "selection": "max(32MiB, ceil(9*raw_float_bound/8), native prefill coarse guard), rounded upward by MiB, capped at native allocation if raw still fits",
+    "fallback": "Unsupported route, source mismatch or conservative raw bound above native allocation returns supported=false; startup hook retains the native getter.",
+    "actual_runtime_scope": "Root protocol limits the GPU validation to current Qwen, at most 4 requests, 512 batched query tokens, max model length 8320. Pure arithmetic checks on other limits are CPU only."
+  },
+  "local_tile_selector": {
+    "path": "data/include/flashinfer/utils.cuh",
+    "lines": [
+      389,
+      416
+    ],
+    "excerpt": "inline uint32_t FA2DetermineCtaTileQ(int64_t avg_packed_qo_len, uint32_t head_dim) {\n  if (head_dim >= 512) {\n    if (avg_packed_qo_len <= 32) {\n      return 16;  // decode / short-q (incl. speculative decode): lean CTA16\n    }\n    return 32;  // Long-q prefill use CTA_TILE_Q=32\n  }\n  if (avg_packed_qo_len > 64 && head_dim < 256) {\n    return 128;\n  } else {\n    auto compute_capacity = GetCudaComputeCapability();\n    if (compute_capacity.first >= 8) {\n      // Ampere or newer\n      if (avg_packed_qo_len > 16) {\n        // avg_packed_qo_len <= 64\n        return 64;\n      } else {\n        // avg_packed_qo_len <= 16\n        return 16;\n      }\n    } else {\n      // NOTE(Zihao): not enough shared memory on Turing for 1x4 warp layout\n      return 64;\n    }\n  }\n}\n\ninline int UpPowerOfTwo(int x) {",
+    "candidate_coverage": "head>=512 can return32; current head128 returns16/64/128; all four PR candidates conservatively included"
+  },
+  "local_source_hashes": {
+    "data/include/flashinfer/attention/scheduler.cuh": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+    "data/include/flashinfer/utils.cuh": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+    "data/include/flashinfer/allocator.h": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+    "prefill.py": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+    "decode.py": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+    "data/csrc/batch_prefill.cu": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+    "data/csrc/batch_prefill_jit_binding.cu": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc"
+  },
+  "expected_source": {
+    "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+    "query_method": "FlashInfer BatchPrefill/BatchDecode.workspace_size; startup-only boundary checks"
+  }
+}

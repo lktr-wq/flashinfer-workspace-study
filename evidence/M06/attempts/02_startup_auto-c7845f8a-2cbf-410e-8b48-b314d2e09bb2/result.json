@@ -1,0 +1,4061 @@
+{
+  "stage": "FI-S03-M06",
+  "job": "02_STARTUP_AUTO",
+  "job_id": "02_STARTUP_AUTO",
+  "backend": "FLASHINFER",
+  "phase": "capacity",
+  "workspace_mib": 394,
+  "passed": true,
+  "manifest_sha256": "cb4e71e34bae3ae474e58c48d7c15f0eaceec6b7ea46d3fb857f8395b535b3d9",
+  "protocol_sha256": "ebacd2bfd8b46ba14f4ae0470249bce3fdb3557bbb8e5f02ed4077b0b59ac5bf",
+  "inputs_sha256": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8",
+  "cases": [
+    {
+      "case_id": "L16384_B4",
+      "path": "cases/L16384_B4.json",
+      "sha256": "f6f0833b5848ec78929276c526bb9ddea902dc21f60ec9ea12063b02577ab80c"
+    }
+  ],
+  "initialization_seconds": 59.47225069499996,
+  "workerpath_relative": "workerpath.json",
+  "workerpath_sha256": "48aa8e3b688f6946bcd04495dd36a6ba7d298aece44f2851a93bbd753ab21dea",
+  "case_order": [
+    "L16384_B4"
+  ],
+  "quality_results": [
+    {
+      "case_id": "QUALITY_ARITH",
+      "scope": "short",
+      "input_token_count": 36,
+      "text": "15",
+      "token_ids": [
+        16,
+        20,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "0",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792778006.4763424,
+          "queued_ts": 411.570916902,
+          "scheduled_ts": 411.570938131,
+          "first_token_ts": 414.231992326,
+          "last_token_ts": 414.550775869,
+          "first_token_latency": 2.6798934936523438,
+          "num_generation_tokens": 3,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 2.1228999969480356e-05,
+          "prefill_seconds": 2.6610541950000197,
+          "decode_seconds": 0.318783542999995,
+          "engine_queued_to_last_token_seconds": 2.979858966999984,
+          "inference_seconds": 2.9798377380000147,
+          "ttft_seconds": 2.6798934936523438,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 3,
+      "selected_logprobs": [
+        -0.0009976415894925594,
+        -1.311301275563892e-06,
+        -0.0007786102942191064
+      ],
+      "selected_token_logprobs": [
+        -0.0009976415894925594,
+        -1.311301275563892e-06,
+        -0.0007786102942191064
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LOOKUP",
+      "scope": "short",
+      "input_token_count": 77,
+      "text": "```json\n{\n  \"owner\": \"小陈\",\n  \"count\": 23\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        8118,
+        788,
+        330,
+        30709,
+        100348,
+        756,
+        220,
+        330,
+        1830,
+        788,
+        220,
+        17,
+        18,
+        198,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "1",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792778009.475738,
+          "queued_ts": 414.565282952,
+          "scheduled_ts": 414.565291127,
+          "first_token_ts": 414.588627292,
+          "last_token_ts": 414.892610274,
+          "first_token_latency": 0.03688478469848633,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 8.175000004939648e-06,
+          "prefill_seconds": 0.02333616499998925,
+          "decode_seconds": 0.30398298199997953,
+          "engine_queued_to_last_token_seconds": 0.3273273219999737,
+          "inference_seconds": 0.3273191469999688,
+          "ttft_seconds": 0.03688478469848633,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.017340010032057762,
+        -1.2159273865108844e-05,
+        -2.1457441107486375e-05,
+        -0.0018615075387060642,
+        -0.05035315081477165,
+        -0.0011741180205717683,
+        -2.1815061700181104e-05,
+        -7.510157047363464e-06,
+        -8.856858039507642e-05,
+        -7.033100700937212e-05,
+        -1.2755313036905136e-05,
+        -4.410734163684538e-06,
+        -5.960462772236497e-07,
+        -6.9141146923357155e-06,
+        -8.344646857949556e-07,
+        -9.536738616588991e-07,
+        -0.0002037079248111695,
+        -1.7762025890988298e-05,
+        -2.145764938177308e-06,
+        -5.340433563105762e-05,
+        -3.6954811548639555e-06,
+        -0.0001234931987710297,
+        -6.770858453819528e-05
+      ],
+      "selected_token_logprobs": [
+        -0.017340010032057762,
+        -1.2159273865108844e-05,
+        -2.1457441107486375e-05,
+        -0.0018615075387060642,
+        -0.05035315081477165,
+        -0.0011741180205717683,
+        -2.1815061700181104e-05,
+        -7.510157047363464e-06,
+        -8.856858039507642e-05,
+        -7.033100700937212e-05,
+        -1.2755313036905136e-05,
+        -4.410734163684538e-06,
+        -5.960462772236497e-07,
+        -6.9141146923357155e-06,
+        -8.344646857949556e-07,
+        -9.536738616588991e-07,
+        -0.0002037079248111695,
+        -1.7762025890988298e-05,
+        -2.145764938177308e-06,
+        -5.340433563105762e-05,
+        -3.6954811548639555e-06,
+        -0.0001234931987710297,
+        -6.770858453819528e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LATEST",
+      "scope": "short",
+      "input_token_count": 90,
+      "text": "```json\n{\n  \"version\": 3,\n  \"status\": \"已出库\"\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        4366,
+        788,
+        220,
+        18,
+        345,
+        220,
+        330,
+        2829,
+        788,
+        330,
+        36667,
+        20221,
+        44956,
+        698,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "2",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792778009.817395,
+          "queued_ts": 414.906389047,
+          "scheduled_ts": 414.906396852,
+          "first_token_ts": 414.933068416,
+          "last_token_ts": 415.23614851,
+          "first_token_latency": 0.03977370262145996,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 7.804999995641992e-06,
+          "prefill_seconds": 0.026671564000025683,
+          "decode_seconds": 0.3030800939999949,
+          "engine_queued_to_last_token_seconds": 0.32975946300001624,
+          "inference_seconds": 0.3297516580000206,
+          "ttft_seconds": 0.03977370262145996,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.017996829003095627,
+        -7.128461584215984e-05,
+        -6.842378934379667e-05,
+        -0.10121935606002808,
+        -0.023699460551142693,
+        -0.0024917051196098328,
+        -2.8967437174287625e-05,
+        -4.0649541915627196e-05,
+        -0.008061964064836502,
+        -0.0035675233229994774,
+        -0.00040975757292471826,
+        -8.344646857949556e-07,
+        -6.198863957251888e-06,
+        -1.4305104514278355e-06,
+        -1.311301275563892e-06,
+        -1.3708974620385561e-05,
+        -0.007055368740111589,
+        -1.5616295058862306e-05,
+        -3.576272320060525e-06,
+        -4.708655978902243e-05,
+        -3.302042750874534e-05,
+        -0.0007102350937202573,
+        -8.21318244561553e-05
+      ],
+      "selected_token_logprobs": [
+        -0.017996829003095627,
+        -7.128461584215984e-05,
+        -6.842378934379667e-05,
+        -0.10121935606002808,
+        -0.023699460551142693,
+        -0.0024917051196098328,
+        -2.8967437174287625e-05,
+        -4.0649541915627196e-05,
+        -0.008061964064836502,
+        -0.0035675233229994774,
+        -0.00040975757292471826,
+        -8.344646857949556e-07,
+        -6.198863957251888e-06,
+        -1.4305104514278355e-06,
+        -1.311301275563892e-06,
+        -1.3708974620385561e-05,
+        -0.007055368740111589,
+        -1.5616295058862306e-05,
+        -3.576272320060525e-06,
+        -4.708655978902243e-05,
+        -3.302042750874534e-05,
+        -0.0007102350937202573,
+        -8.21318244561553e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LONG_LOOKUP",
+      "scope": "long",
+      "input_token_count": 8192,
+      "text": "```json\n{\n  \"owner\": \"小郑\",\n  \"count\": 47\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        8118,
+        788,
+        330,
+        30709,
+        100778,
+        756,
+        220,
+        330,
+        1830,
+        788,
+        220,
+        19,
+        22,
+        198,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "3",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792778010.1613307,
+          "queued_ts": 415.250093678,
+          "scheduled_ts": 415.250101603,
+          "first_token_ts": 416.322718861,
+          "last_token_ts": 416.65227721,
+          "first_token_latency": 1.0858066082000732,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 7.925000033992546e-06,
+          "prefill_seconds": 1.0726172579999798,
+          "decode_seconds": 0.329558349000024,
+          "engine_queued_to_last_token_seconds": 1.4021835320000378,
+          "inference_seconds": 1.4021756070000038,
+          "ttft_seconds": 1.0858066082000732,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.4789573550224304,
+        -3.373566141817719e-05,
+        -3.4570634852570947e-06,
+        -0.0007017772295512259,
+        -0.006419276352971792,
+        -3.6238969187252223e-05,
+        -5.245195097813848e-06,
+        -3.3378546504536644e-06,
+        -6.4490144723095e-05,
+        -0.10871531069278717,
+        -0.4909927248954773,
+        -0.000503770774230361,
+        -1.1920922133867862e-06,
+        0.0,
+        0.0,
+        -4.768370445162873e-07,
+        -0.0016067225951701403,
+        -0.07803107053041458,
+        -0.0011828100541606545,
+        -7.688703772146255e-05,
+        -9.894321920000948e-06,
+        -5.2569914259947836e-05,
+        -5.113947918289341e-05
+      ],
+      "selected_token_logprobs": [
+        -0.4789573550224304,
+        -3.373566141817719e-05,
+        -3.4570634852570947e-06,
+        -0.0007017772295512259,
+        -0.006419276352971792,
+        -3.6238969187252223e-05,
+        -5.245195097813848e-06,
+        -3.3378546504536644e-06,
+        -6.4490144723095e-05,
+        -0.10871531069278717,
+        -0.4909927248954773,
+        -0.000503770774230361,
+        -1.1920922133867862e-06,
+        0.0,
+        0.0,
+        -4.768370445162873e-07,
+        -0.0016067225951701403,
+        -0.07803107053041458,
+        -0.0011828100541606545,
+        -7.688703772146255e-05,
+        -9.894321920000948e-06,
+        -5.2569914259947836e-05,
+        -5.113947918289341e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LONG_LATEST",
+      "scope": "long",
+      "input_token_count": 8192,
+      "text": "```json\n{\n  \"version\": 3,\n  \"status\": \"已出库\"\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        4366,
+        788,
+        220,
+        18,
+        345,
+        220,
+        330,
+        2829,
+        788,
+        330,
+        36667,
+        20221,
+        44956,
+        698,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "4",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792778011.577718,
+          "queued_ts": 416.667246799,
+          "scheduled_ts": 416.667258871,
+          "first_token_ts": 417.6902975,
+          "last_token_ts": 418.001164829,
+          "first_token_latency": 2.2960119247436523,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 1.2072000004081929e-05,
+          "prefill_seconds": 1.0230386289999842,
+          "decode_seconds": 0.31086732900001834,
+          "engine_queued_to_last_token_seconds": 1.3339180300000066,
+          "inference_seconds": 1.3339059580000026,
+          "ttft_seconds": 2.2960119247436523,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.010648809373378754,
+        -8.320462075062096e-05,
+        -9.179073458653875e-06,
+        -0.004338376689702272,
+        -0.014452068135142326,
+        -0.0010346779599785805,
+        -3.969590397900902e-05,
+        -2.2172682292875834e-05,
+        -0.01417543739080429,
+        -0.6191967725753784,
+        -0.00031573555315844715,
+        -1.0728830375228426e-06,
+        -5.960462772236497e-07,
+        -4.768370445162873e-07,
+        -1.1920928244535389e-07,
+        -4.303362584323622e-05,
+        -0.712391197681427,
+        -0.007136567961424589,
+        -2.145764938177308e-06,
+        -0.00021336186910048127,
+        -1.4066597032069694e-05,
+        -5.8887653722194955e-05,
+        -5.757642793469131e-05
+      ],
+      "selected_token_logprobs": [
+        -0.010648809373378754,
+        -8.320462075062096e-05,
+        -9.179073458653875e-06,
+        -0.004338376689702272,
+        -0.014452068135142326,
+        -0.0010346779599785805,
+        -3.969590397900902e-05,
+        -2.2172682292875834e-05,
+        -0.01417543739080429,
+        -0.6191967725753784,
+        -0.00031573555315844715,
+        -1.0728830375228426e-06,
+        -5.960462772236497e-07,
+        -4.768370445162873e-07,
+        -1.1920928244535389e-07,
+        -4.303362584323622e-05,
+        -0.712391197681427,
+        -0.007136567961424589,
+        -2.145764938177308e-06,
+        -0.00021336186910048127,
+        -1.4066597032069694e-05,
+        -5.8887653722194955e-05,
+        -5.757642793469131e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LONG_COMBINE",
+      "scope": "long",
+      "input_token_count": 8192,
+      "text": "```json\n{\n  \"owner\": \"松林订单0045\",\n  \"count\": 29\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        8118,
+        788,
+        330,
+        100180,
+        99463,
+        50410,
+        15,
+        15,
+        19,
+        20,
+        756,
+        220,
+        330,
+        1830,
+        788,
+        220,
+        17,
+        24,
+        198,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "5",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792778014.1857133,
+          "queued_ts": 418.015672932,
+          "scheduled_ts": 418.015680809,
+          "first_token_ts": 419.034317139,
+          "last_token_ts": 419.43627208,
+          "first_token_latency": 1.0320851802825928,
+          "num_generation_tokens": 28,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 7.877000030021009e-06,
+          "prefill_seconds": 1.0186363299999925,
+          "decode_seconds": 0.4019549409999854,
+          "engine_queued_to_last_token_seconds": 1.420599148000008,
+          "inference_seconds": 1.420591270999978,
+          "ttft_seconds": 1.0320851802825928,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 28,
+      "selected_logprobs": [
+        -0.02094554714858532,
+        -3.540453326422721e-05,
+        -4.0531076592742465e-06,
+        -0.530498743057251,
+        -0.020939942449331284,
+        -4.6967357775429264e-05,
+        -0.00010573305189609528,
+        -9.179073458653875e-06,
+        -0.00032455421751365066,
+        -0.5078964233398438,
+        0.0,
+        -0.00016258825780823827,
+        -0.0034159424249082804,
+        -0.06392426788806915,
+        -0.8473741412162781,
+        -0.6390079855918884,
+        -0.476755827665329,
+        -7.986990567587782e-06,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -0.0013809201773256063,
+        -0.16432158648967743,
+        -0.10255038738250732,
+        -0.00018463814922142774,
+        -4.446407547220588e-05,
+        -0.00037377048283815384,
+        -7.426462980220094e-05
+      ],
+      "selected_token_logprobs": [
+        -0.02094554714858532,
+        -3.540453326422721e-05,
+        -4.0531076592742465e-06,
+        -0.530498743057251,
+        -0.020939942449331284,
+        -4.6967357775429264e-05,
+        -0.00010573305189609528,
+        -9.179073458653875e-06,
+        -0.00032455421751365066,
+        -0.5078964233398438,
+        0.0,
+        -0.00016258825780823827,
+        -0.0034159424249082804,
+        -0.06392426788806915,
+        -0.8473741412162781,
+        -0.6390079855918884,
+        -0.476755827665329,
+        -7.986990567587782e-06,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -0.0013809201773256063,
+        -0.16432158648967743,
+        -0.10255038738250732,
+        -0.00018463814922142774,
+        -4.446407547220588e-05,
+        -0.00037377048283815384,
+        -7.426462980220094e-05
+      ],
+      "logprobs_finite": true
+    }
+  ],
+  "quality_inputs_sha256": "fe804b0f7c4a5ef0194abd27b8f674740b3c72306f05daabf97e6c048d665594",
+  "concurrent_quality": {
+    "inputs_sha256": "8bdc9c239fe93dc6e509aabdb32317daf370f52c2de51c6fb6a0112f151aa15d",
+    "measurement_repeats": 2,
+    "collection_complete": true,
+    "cases": [
+      {
+        "case_id": "CQ_LOOKUP_SLOT4",
+        "path": "concurrent-quality/CQ_LOOKUP_SLOT4.json",
+        "sha256": "cd0588008cdf0054de3baf6a091ed8e18e28e8433ccf28cae6b51f96e229f3f3"
+      },
+      {
+        "case_id": "CQ_LATEST_SLOT4",
+        "path": "concurrent-quality/CQ_LATEST_SLOT4.json",
+        "sha256": "aeee94c1f50895f6ad68f0889f252ffca283904182dcef8c19316c04bc4d4304"
+      },
+      {
+        "case_id": "CQ_COMBINE_SLOT4",
+        "path": "concurrent-quality/CQ_COMBINE_SLOT4.json",
+        "sha256": "45c6e08b0a0c3f191061bd0bc41bc9992bfcba6e6c48648830089d7918776c94"
+      },
+      {
+        "case_id": "CQ_LOOKUP_SLOT1",
+        "path": "concurrent-quality/CQ_LOOKUP_SLOT1.json",
+        "sha256": "0bbe8cb540bde38e25a59f7fb8a4810b4b081c30ec1e2a5df12a210755e163ca"
+      }
+    ],
+    "scenario_summaries": [
+      {
+        "case_id": "CQ_LOOKUP_SLOT4",
+        "qa_slot": 4,
+        "measurement_count": 2,
+        "answer_correct_count": 0,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      },
+      {
+        "case_id": "CQ_LATEST_SLOT4",
+        "qa_slot": 4,
+        "measurement_count": 2,
+        "answer_correct_count": 2,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      },
+      {
+        "case_id": "CQ_COMBINE_SLOT4",
+        "qa_slot": 4,
+        "measurement_count": 2,
+        "answer_correct_count": 0,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      },
+      {
+        "case_id": "CQ_LOOKUP_SLOT1",
+        "qa_slot": 1,
+        "measurement_count": 2,
+        "answer_correct_count": 0,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      }
+    ],
+    "timing_scope": "QA can stop before 128 tokens; these mixed batches are separate from fixed-work performance timing."
+  },
+  "startup_workspace": {
+    "mode": "auto",
+    "decisions": [
+      {
+        "status": "selected",
+        "chosen_bytes": 33554432,
+        "configured_bytes": 413138944,
+        "observedsource": "workspace_policy range bound + official demand queries",
+        "limits": {
+          "backend": "FLASHINFER",
+          "device_capability": [
+            8,
+            9
+          ],
+          "num_sms": 24,
+          "num_qo_heads": 12,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "page_size": 16,
+          "max_num_seqs": 4,
+          "max_num_batched_tokens": 512,
+          "max_model_len": 16512,
+          "q_dtype": "bfloat16",
+          "kv_dtype": "bfloat16",
+          "o_dtype": "bfloat16",
+          "enable_cuda_graph": true,
+          "disable_split_kv": false,
+          "has_sinks": false,
+          "sliding_window": -1,
+          "logits_soft_cap": 0.0,
+          "tensor_parallel_size": 1,
+          "decode_context_parallel_size": 1,
+          "fixed_split_size": -1,
+          "num_colocated_ctas": 0,
+          "use_cascade": false,
+          "has_custom_mask": false,
+          "pos_encoding_mode": "NONE"
+        },
+        "fallback": null,
+        "query": {
+          "passed": true,
+          "selector_bytes": 256,
+          "integer_wrapper_bytes": 8388608,
+          "calls": 14,
+          "coverage_source": "range upper bound; concrete checks are startup cross-checks",
+          "rows": [
+            {
+              "kind": "prefill",
+              "cuda_graph": false,
+              "query_lengths": [
+                512
+              ],
+              "kv_lengths": [
+                16497
+              ],
+              "float_bytes": 0,
+              "int_bytes": 300,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "prefill",
+              "cuda_graph": false,
+              "query_lengths": [
+                512
+              ],
+              "kv_lengths": [
+                16512
+              ],
+              "float_bytes": 0,
+              "int_bytes": 300,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": false,
+              "query_lengths": [
+                1
+              ],
+              "kv_lengths": [
+                1
+              ],
+              "float_bytes": 0,
+              "int_bytes": 60,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": true,
+              "query_lengths": [
+                1
+              ],
+              "kv_lengths": [
+                1
+              ],
+              "float_bytes": 2377728,
+              "int_bytes": 360,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": false,
+              "query_lengths": [
+                1
+              ],
+              "kv_lengths": [
+                16512
+              ],
+              "float_bytes": 2377728,
+              "int_bytes": 344,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": true,
+              "query_lengths": [
+                1
+              ],
+              "kv_lengths": [
+                16512
+              ],
+              "float_bytes": 2377728,
+              "int_bytes": 360,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "prefill",
+              "cuda_graph": false,
+              "query_lengths": [
+                128,
+                128,
+                128,
+                128
+              ],
+              "kv_lengths": [
+                16497,
+                16497,
+                16497,
+                16497
+              ],
+              "float_bytes": 0,
+              "int_bytes": 312,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "prefill",
+              "cuda_graph": false,
+              "query_lengths": [
+                128,
+                128,
+                128,
+                128
+              ],
+              "kv_lengths": [
+                16512,
+                16512,
+                16512,
+                16512
+              ],
+              "float_bytes": 0,
+              "int_bytes": 312,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "prefill",
+              "cuda_graph": false,
+              "query_lengths": [
+                509,
+                1,
+                1,
+                1
+              ],
+              "kv_lengths": [
+                16497,
+                16497,
+                16497,
+                16497
+              ],
+              "float_bytes": 0,
+              "int_bytes": 360,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "prefill",
+              "cuda_graph": false,
+              "query_lengths": [
+                509,
+                1,
+                1,
+                1
+              ],
+              "kv_lengths": [
+                16512,
+                16512,
+                16512,
+                16512
+              ],
+              "float_bytes": 0,
+              "int_bytes": 360,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": false,
+              "query_lengths": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "kv_lengths": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "float_bytes": 0,
+              "int_bytes": 72,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": true,
+              "query_lengths": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "kv_lengths": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "float_bytes": 2377728,
+              "int_bytes": 392,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": false,
+              "query_lengths": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "kv_lengths": [
+                16512,
+                16512,
+                16512,
+                16512
+              ],
+              "float_bytes": 2377728,
+              "int_bytes": 376,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            },
+            {
+              "kind": "decode",
+              "cuda_graph": true,
+              "query_lengths": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "kv_lengths": [
+                16512,
+                16512,
+                16512,
+                16512
+              ],
+              "float_bytes": 2377728,
+              "int_bytes": 392,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "within_bound": true
+            }
+          ]
+        },
+        "source": {
+          "query_method": "FlashInfer BatchPrefill/BatchDecode.workspace_size; startup-only boundary checks",
+          "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+          "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+          "source_verification": {
+            "passed": true,
+            "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+            "files": [
+              {
+                "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/include/flashinfer/utils.cuh",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/include/flashinfer/allocator.h",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "prefill.py",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "decode.py",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/csrc/batch_prefill.cu",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                "matched": true,
+                "error": null
+              }
+            ],
+            "vendor_files": [
+              {
+                "relative_path": "vendor/pr5236/scheduler.cuh",
+                "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "vendor/pr5236/utils.cuh",
+                "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                "matched": true,
+                "error": null
+              }
+            ],
+            "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+          }
+        },
+        "policy": {
+          "supported": true,
+          "reason": "source_locked_default_split_range",
+          "policy_version": "s03-m04-pr5236-host-bound-v1",
+          "source_verification": {
+            "passed": true,
+            "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+            "files": [
+              {
+                "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/include/flashinfer/utils.cuh",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/include/flashinfer/allocator.h",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "prefill.py",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "decode.py",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/csrc/batch_prefill.cu",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                "matched": true,
+                "error": null
+              }
+            ],
+            "vendor_files": [
+              {
+                "relative_path": "vendor/pr5236/scheduler.cuh",
+                "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                "matched": true,
+                "error": null
+              },
+              {
+                "relative_path": "vendor/pr5236/utils.cuh",
+                "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                "matched": true,
+                "error": null
+              }
+            ],
+            "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+          },
+          "bound_rows": [
+            {
+              "cta_tile_q": 16,
+              "max_num_tiles_q": 196,
+              "max_batch_size_if_split": 24,
+              "padded_float_batch_size": 196,
+              "padded_int_batch_size": 196,
+              "float_bound_bytes": 19418112,
+              "int_bound_bytes": 4660
+            },
+            {
+              "cta_tile_q": 32,
+              "max_num_tiles_q": 100,
+              "max_batch_size_if_split": 24,
+              "padded_float_batch_size": 100,
+              "padded_int_batch_size": 100,
+              "float_bound_bytes": 19814400,
+              "int_bound_bytes": 3412
+            },
+            {
+              "cta_tile_q": 64,
+              "max_num_tiles_q": 52,
+              "max_batch_size_if_split": 24,
+              "padded_float_batch_size": 52,
+              "padded_int_batch_size": 52,
+              "float_bound_bytes": 20606976,
+              "int_bound_bytes": 2788
+            },
+            {
+              "cta_tile_q": 128,
+              "max_num_tiles_q": 28,
+              "max_batch_size_if_split": 24,
+              "padded_float_batch_size": 28,
+              "padded_int_batch_size": 28,
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 2476
+            }
+          ],
+          "float_bound_bytes": 22192128,
+          "int_bound_bytes": 4660,
+          "limits": {
+            "max_num_seqs": 4,
+            "max_num_batched_tokens": 512,
+            "max_model_len": 16512,
+            "max_num_pages_per_request": 1032,
+            "page_size": 16,
+            "num_qo_heads": 12,
+            "num_kv_heads": 2,
+            "head_dim": 128,
+            "num_sms": 24,
+            "enable_cuda_graph": true
+          },
+          "source_identity": {
+            "policy_version": "s03-m04-pr5236-host-bound-v1",
+            "upstream_pr": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+            "upstream_head_sha": "fdf3c5142b27dc34b8c2cb1aa8fe8910add79486",
+            "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+          },
+          "coverage": "Pinned FA2 scheduler-derived range bound over every admitted query/KV distribution",
+          "proof": [
+            "The tile selector returns a member of {16,32,64,128}; all members are bounded.",
+            "For B requests and R rows, the sum of rounded-up packed query tiles is <= ceil(R*G/t)+B.",
+            "Default split search bounds split CTAs by floor(2*SM/KV_heads); CUDA graphs additionally pad to the query tile bound.",
+            "FP32 partial values and statistics follow the pinned allocator's 16-byte aligned order.",
+            "uniform_q_len restricts row distributions and is covered by the same all-distributions tile bound."
+          ],
+          "selected_bytes": 33554432,
+          "selected_mib": 32.0,
+          "raw_float_bound_mib": 21.1640625,
+          "native_default_bytes": 413138944,
+          "native_prefill_guard_bytes": 12582912,
+          "margin_numerator": 9,
+          "margin_denominator": 8,
+          "minimum_selected_bytes": 33554432,
+          "selection": "shrink",
+          "query_cases": [
+            {
+              "name": "b1-q1-skew-maxkv",
+              "query_lens": [
+                1
+              ],
+              "kv_lens": [
+                16512
+              ],
+              "use_cuda_graph": false
+            },
+            {
+              "name": "b1-q512-skew-maxkv",
+              "query_lens": [
+                512
+              ],
+              "kv_lens": [
+                16512
+              ],
+              "use_cuda_graph": false
+            },
+            {
+              "name": "b1-decode-graph-maxkv",
+              "query_lens": [
+                1
+              ],
+              "kv_lens": [
+                16512
+              ],
+              "use_cuda_graph": true
+            },
+            {
+              "name": "b4-q4-skew-maxkv",
+              "query_lens": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "kv_lens": [
+                16512,
+                16512,
+                16512,
+                16512
+              ],
+              "use_cuda_graph": false
+            },
+            {
+              "name": "b4-q512-skew-maxkv",
+              "query_lens": [
+                509,
+                1,
+                1,
+                1
+              ],
+              "kv_lens": [
+                16512,
+                16512,
+                16512,
+                16512
+              ],
+              "use_cuda_graph": false
+            },
+            {
+              "name": "b4-decode-graph-maxkv",
+              "query_lens": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "kv_lens": [
+                16512,
+                16512,
+                16512,
+                16512
+              ],
+              "use_cuda_graph": true
+            }
+          ]
+        }
+      }
+    ],
+    "allocation_events": [
+      {
+        "generation": 1,
+        "builder_id": 133667917029088,
+        "pointer": 24872222720,
+        "nbytes": 33554432,
+        "during_graph_capture": false,
+        "query_calls_in_getter": 0
+      },
+      {
+        "generation": 2,
+        "builder_id": 133667916909120,
+        "pointer": 24872222720,
+        "nbytes": 33554432,
+        "during_graph_capture": false,
+        "query_calls_in_getter": 0
+      }
+    ],
+    "worker_health": {
+      "worker_class": "startup_worker.AutoWorkspaceWorker",
+      "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+      "rank": 0,
+      "pid": 611,
+      "prepared_before_memory_profile": true,
+      "hook_installed": true,
+      "query_calls": 14,
+      "query_calls_in_getter": 0,
+      "retained_query_tensors": 0,
+      "configured_workspace_bytes": 413138944,
+      "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+      "vllm_version": "0.28.0",
+      "startup_selection_seconds": 3.5518898660000104,
+      "native_memory_profile_completed": true,
+      "live_workspaces": [
+        {
+          "pointer": 24872222720,
+          "nbytes": 33554432
+        }
+      ],
+      "live_workspace_count": 1
+    }
+  },
+  "scheduler": {
+    "source": "worker.vllm_config.scheduler_config",
+    "scheduler_reserve_full_isl": true,
+    "max_num_seqs": 4,
+    "max_num_batched_tokens": 512,
+    "enable_chunked_prefill": true,
+    "policy": "fcfs",
+    "watermark": 0.0,
+    "max_model_len": 16512
+  },
+  "capacity_boundary_observation": {
+    "required_tokens": 66048,
+    "required_prompt_tokens": 65536,
+    "actual_token_capacity": 75440,
+    "mode": "auto",
+    "expected_side": "at_or_above_required",
+    "expected_side_met": true,
+    "status": "side_observed",
+    "automatic_cache_adjustment": false,
+    "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+  },
+  "actual_workspace": {
+    "builders": [
+      {
+        "group_index": 0,
+        "attention_index": 0,
+        "builder_index": 0,
+        "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+        "pointer": 24872222720,
+        "nbytes": 33554432
+      }
+    ],
+    "unique_buffers": [
+      {
+        "pointer": 24872222720,
+        "nbytes": 33554432
+      }
+    ],
+    "unique_count": 1,
+    "total_bytes": 33554432,
+    "expected_bytes": 33554432,
+    "validated": true
+  },
+  "kv": {
+    "num_blocks": 4715,
+    "block_size": 16,
+    "total_tensor_bytes": 2163015680,
+    "token_capacity": 75440,
+    "max_concurrency": 4.5687984496124034,
+    "configured_memory_bytes": null,
+    "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+    "allocation_mode": "automatic_gpu_memory_utilization"
+  },
+  "planning": {
+    "before": {
+      "startup_workspace": {
+        "mode": "auto",
+        "decisions": [
+          {
+            "status": "selected",
+            "chosen_bytes": 33554432,
+            "configured_bytes": 413138944,
+            "observedsource": "workspace_policy range bound + official demand queries",
+            "limits": {
+              "backend": "FLASHINFER",
+              "device_capability": [
+                8,
+                9
+              ],
+              "num_sms": 24,
+              "num_qo_heads": 12,
+              "num_kv_heads": 2,
+              "head_dim": 128,
+              "page_size": 16,
+              "max_num_seqs": 4,
+              "max_num_batched_tokens": 512,
+              "max_model_len": 16512,
+              "q_dtype": "bfloat16",
+              "kv_dtype": "bfloat16",
+              "o_dtype": "bfloat16",
+              "enable_cuda_graph": true,
+              "disable_split_kv": false,
+              "has_sinks": false,
+              "sliding_window": -1,
+              "logits_soft_cap": 0.0,
+              "tensor_parallel_size": 1,
+              "decode_context_parallel_size": 1,
+              "fixed_split_size": -1,
+              "num_colocated_ctas": 0,
+              "use_cascade": false,
+              "has_custom_mask": false,
+              "pos_encoding_mode": "NONE"
+            },
+            "fallback": null,
+            "query": {
+              "passed": true,
+              "selector_bytes": 256,
+              "integer_wrapper_bytes": 8388608,
+              "calls": 14,
+              "coverage_source": "range upper bound; concrete checks are startup cross-checks",
+              "rows": [
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    512
+                  ],
+                  "kv_lengths": [
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 300,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    512
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 300,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    1
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 60,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    1
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 344,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    128,
+                    128,
+                    128,
+                    128
+                  ],
+                  "kv_lengths": [
+                    16497,
+                    16497,
+                    16497,
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 312,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    128,
+                    128,
+                    128,
+                    128
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 312,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16497,
+                    16497,
+                    16497,
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 72,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 392,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 376,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 392,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                }
+              ]
+            },
+            "source": {
+              "query_method": "FlashInfer BatchPrefill/BatchDecode.workspace_size; startup-only boundary checks",
+              "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+              "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+              "source_verification": {
+                "passed": true,
+                "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                "files": [
+                  {
+                    "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                    "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                    "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/allocator.h",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                    "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "prefill.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                    "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "decode.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                    "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                    "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                    "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "vendor_files": [
+                  {
+                    "relative_path": "vendor/pr5236/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                    "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "vendor/pr5236/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                    "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              }
+            },
+            "policy": {
+              "supported": true,
+              "reason": "source_locked_default_split_range",
+              "policy_version": "s03-m04-pr5236-host-bound-v1",
+              "source_verification": {
+                "passed": true,
+                "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                "files": [
+                  {
+                    "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                    "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                    "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/allocator.h",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                    "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "prefill.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                    "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "decode.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                    "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                    "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                    "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "vendor_files": [
+                  {
+                    "relative_path": "vendor/pr5236/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                    "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "vendor/pr5236/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                    "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              },
+              "bound_rows": [
+                {
+                  "cta_tile_q": 16,
+                  "max_num_tiles_q": 196,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 196,
+                  "padded_int_batch_size": 196,
+                  "float_bound_bytes": 19418112,
+                  "int_bound_bytes": 4660
+                },
+                {
+                  "cta_tile_q": 32,
+                  "max_num_tiles_q": 100,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 100,
+                  "padded_int_batch_size": 100,
+                  "float_bound_bytes": 19814400,
+                  "int_bound_bytes": 3412
+                },
+                {
+                  "cta_tile_q": 64,
+                  "max_num_tiles_q": 52,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 52,
+                  "padded_int_batch_size": 52,
+                  "float_bound_bytes": 20606976,
+                  "int_bound_bytes": 2788
+                },
+                {
+                  "cta_tile_q": 128,
+                  "max_num_tiles_q": 28,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 28,
+                  "padded_int_batch_size": 28,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 2476
+                }
+              ],
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "limits": {
+                "max_num_seqs": 4,
+                "max_num_batched_tokens": 512,
+                "max_model_len": 16512,
+                "max_num_pages_per_request": 1032,
+                "page_size": 16,
+                "num_qo_heads": 12,
+                "num_kv_heads": 2,
+                "head_dim": 128,
+                "num_sms": 24,
+                "enable_cuda_graph": true
+              },
+              "source_identity": {
+                "policy_version": "s03-m04-pr5236-host-bound-v1",
+                "upstream_pr": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+                "upstream_head_sha": "fdf3c5142b27dc34b8c2cb1aa8fe8910add79486",
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              },
+              "coverage": "Pinned FA2 scheduler-derived range bound over every admitted query/KV distribution",
+              "proof": [
+                "The tile selector returns a member of {16,32,64,128}; all members are bounded.",
+                "For B requests and R rows, the sum of rounded-up packed query tiles is <= ceil(R*G/t)+B.",
+                "Default split search bounds split CTAs by floor(2*SM/KV_heads); CUDA graphs additionally pad to the query tile bound.",
+                "FP32 partial values and statistics follow the pinned allocator's 16-byte aligned order.",
+                "uniform_q_len restricts row distributions and is covered by the same all-distributions tile bound."
+              ],
+              "selected_bytes": 33554432,
+              "selected_mib": 32.0,
+              "raw_float_bound_mib": 21.1640625,
+              "native_default_bytes": 413138944,
+              "native_prefill_guard_bytes": 12582912,
+              "margin_numerator": 9,
+              "margin_denominator": 8,
+              "minimum_selected_bytes": 33554432,
+              "selection": "shrink",
+              "query_cases": [
+                {
+                  "name": "b1-q1-skew-maxkv",
+                  "query_lens": [
+                    1
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b1-q512-skew-maxkv",
+                  "query_lens": [
+                    512
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b1-decode-graph-maxkv",
+                  "query_lens": [
+                    1
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": true
+                },
+                {
+                  "name": "b4-q4-skew-maxkv",
+                  "query_lens": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b4-q512-skew-maxkv",
+                  "query_lens": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b4-decode-graph-maxkv",
+                  "query_lens": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": true
+                }
+              ]
+            }
+          }
+        ],
+        "allocation_events": [
+          {
+            "generation": 1,
+            "builder_id": 133667917029088,
+            "pointer": 24872222720,
+            "nbytes": 33554432,
+            "during_graph_capture": false,
+            "query_calls_in_getter": 0
+          },
+          {
+            "generation": 2,
+            "builder_id": 133667916909120,
+            "pointer": 24872222720,
+            "nbytes": 33554432,
+            "during_graph_capture": false,
+            "query_calls_in_getter": 0
+          }
+        ],
+        "worker_health": {
+          "worker_class": "startup_worker.AutoWorkspaceWorker",
+          "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+          "rank": 0,
+          "pid": 611,
+          "prepared_before_memory_profile": true,
+          "hook_installed": true,
+          "query_calls": 14,
+          "query_calls_in_getter": 0,
+          "retained_query_tensors": 0,
+          "configured_workspace_bytes": 413138944,
+          "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+          "vllm_version": "0.28.0",
+          "startup_selection_seconds": 3.5518898660000104,
+          "native_memory_profile_completed": true,
+          "live_workspaces": [
+            {
+              "pointer": 24872222720,
+              "nbytes": 33554432
+            }
+          ],
+          "live_workspace_count": 1
+        }
+      },
+      "scheduler": {
+        "source": "worker.vllm_config.scheduler_config",
+        "scheduler_reserve_full_isl": true,
+        "max_num_seqs": 4,
+        "max_num_batched_tokens": 512,
+        "enable_chunked_prefill": true,
+        "policy": "fcfs",
+        "watermark": 0.0,
+        "max_model_len": 16512
+      },
+      "capacity_boundary_observation": {
+        "required_tokens": 66048,
+        "required_prompt_tokens": 65536,
+        "actual_token_capacity": 75440,
+        "mode": "auto",
+        "expected_side": "at_or_above_required",
+        "expected_side_met": true,
+        "status": "side_observed",
+        "automatic_cache_adjustment": false,
+        "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+      },
+      "actual_workspace": {
+        "builders": [
+          {
+            "group_index": 0,
+            "attention_index": 0,
+            "builder_index": 0,
+            "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+            "pointer": 24872222720,
+            "nbytes": 33554432
+          }
+        ],
+        "unique_buffers": [
+          {
+            "pointer": 24872222720,
+            "nbytes": 33554432
+          }
+        ],
+        "unique_count": 1,
+        "total_bytes": 33554432,
+        "expected_bytes": 33554432,
+        "validated": true
+      },
+      "kv": {
+        "num_blocks": 4715,
+        "block_size": 16,
+        "total_tensor_bytes": 2163015680,
+        "token_capacity": 75440,
+        "max_concurrency": 4.5687984496124034,
+        "configured_memory_bytes": null,
+        "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+        "allocation_mode": "automatic_gpu_memory_utilization"
+      },
+      "automatic_memory": {
+        "gpu_memory_utilization": 0.65,
+        "requested_memory": 5580390400,
+        "available_kv_cache_memory_bytes": 2163343360,
+        "cudagraph_memory_estimate": 88080384
+      }
+    },
+    "after": {
+      "startup_workspace": {
+        "mode": "auto",
+        "decisions": [
+          {
+            "status": "selected",
+            "chosen_bytes": 33554432,
+            "configured_bytes": 413138944,
+            "observedsource": "workspace_policy range bound + official demand queries",
+            "limits": {
+              "backend": "FLASHINFER",
+              "device_capability": [
+                8,
+                9
+              ],
+              "num_sms": 24,
+              "num_qo_heads": 12,
+              "num_kv_heads": 2,
+              "head_dim": 128,
+              "page_size": 16,
+              "max_num_seqs": 4,
+              "max_num_batched_tokens": 512,
+              "max_model_len": 16512,
+              "q_dtype": "bfloat16",
+              "kv_dtype": "bfloat16",
+              "o_dtype": "bfloat16",
+              "enable_cuda_graph": true,
+              "disable_split_kv": false,
+              "has_sinks": false,
+              "sliding_window": -1,
+              "logits_soft_cap": 0.0,
+              "tensor_parallel_size": 1,
+              "decode_context_parallel_size": 1,
+              "fixed_split_size": -1,
+              "num_colocated_ctas": 0,
+              "use_cascade": false,
+              "has_custom_mask": false,
+              "pos_encoding_mode": "NONE"
+            },
+            "fallback": null,
+            "query": {
+              "passed": true,
+              "selector_bytes": 256,
+              "integer_wrapper_bytes": 8388608,
+              "calls": 14,
+              "coverage_source": "range upper bound; concrete checks are startup cross-checks",
+              "rows": [
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    512
+                  ],
+                  "kv_lengths": [
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 300,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    512
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 300,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    1
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 60,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    1
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 344,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    128,
+                    128,
+                    128,
+                    128
+                  ],
+                  "kv_lengths": [
+                    16497,
+                    16497,
+                    16497,
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 312,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    128,
+                    128,
+                    128,
+                    128
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 312,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16497,
+                    16497,
+                    16497,
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 72,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 392,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 376,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 392,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                }
+              ]
+            },
+            "source": {
+              "query_method": "FlashInfer BatchPrefill/BatchDecode.workspace_size; startup-only boundary checks",
+              "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+              "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+              "source_verification": {
+                "passed": true,
+                "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                "files": [
+                  {
+                    "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                    "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                    "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/allocator.h",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                    "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "prefill.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                    "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "decode.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                    "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                    "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                    "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "vendor_files": [
+                  {
+                    "relative_path": "vendor/pr5236/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                    "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "vendor/pr5236/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                    "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              }
+            },
+            "policy": {
+              "supported": true,
+              "reason": "source_locked_default_split_range",
+              "policy_version": "s03-m04-pr5236-host-bound-v1",
+              "source_verification": {
+                "passed": true,
+                "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                "files": [
+                  {
+                    "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                    "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                    "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/allocator.h",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                    "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "prefill.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                    "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "decode.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                    "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                    "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                    "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "vendor_files": [
+                  {
+                    "relative_path": "vendor/pr5236/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                    "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "vendor/pr5236/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                    "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              },
+              "bound_rows": [
+                {
+                  "cta_tile_q": 16,
+                  "max_num_tiles_q": 196,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 196,
+                  "padded_int_batch_size": 196,
+                  "float_bound_bytes": 19418112,
+                  "int_bound_bytes": 4660
+                },
+                {
+                  "cta_tile_q": 32,
+                  "max_num_tiles_q": 100,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 100,
+                  "padded_int_batch_size": 100,
+                  "float_bound_bytes": 19814400,
+                  "int_bound_bytes": 3412
+                },
+                {
+                  "cta_tile_q": 64,
+                  "max_num_tiles_q": 52,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 52,
+                  "padded_int_batch_size": 52,
+                  "float_bound_bytes": 20606976,
+                  "int_bound_bytes": 2788
+                },
+                {
+                  "cta_tile_q": 128,
+                  "max_num_tiles_q": 28,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 28,
+                  "padded_int_batch_size": 28,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 2476
+                }
+              ],
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "limits": {
+                "max_num_seqs": 4,
+                "max_num_batched_tokens": 512,
+                "max_model_len": 16512,
+                "max_num_pages_per_request": 1032,
+                "page_size": 16,
+                "num_qo_heads": 12,
+                "num_kv_heads": 2,
+                "head_dim": 128,
+                "num_sms": 24,
+                "enable_cuda_graph": true
+              },
+              "source_identity": {
+                "policy_version": "s03-m04-pr5236-host-bound-v1",
+                "upstream_pr": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+                "upstream_head_sha": "fdf3c5142b27dc34b8c2cb1aa8fe8910add79486",
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              },
+              "coverage": "Pinned FA2 scheduler-derived range bound over every admitted query/KV distribution",
+              "proof": [
+                "The tile selector returns a member of {16,32,64,128}; all members are bounded.",
+                "For B requests and R rows, the sum of rounded-up packed query tiles is <= ceil(R*G/t)+B.",
+                "Default split search bounds split CTAs by floor(2*SM/KV_heads); CUDA graphs additionally pad to the query tile bound.",
+                "FP32 partial values and statistics follow the pinned allocator's 16-byte aligned order.",
+                "uniform_q_len restricts row distributions and is covered by the same all-distributions tile bound."
+              ],
+              "selected_bytes": 33554432,
+              "selected_mib": 32.0,
+              "raw_float_bound_mib": 21.1640625,
+              "native_default_bytes": 413138944,
+              "native_prefill_guard_bytes": 12582912,
+              "margin_numerator": 9,
+              "margin_denominator": 8,
+              "minimum_selected_bytes": 33554432,
+              "selection": "shrink",
+              "query_cases": [
+                {
+                  "name": "b1-q1-skew-maxkv",
+                  "query_lens": [
+                    1
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b1-q512-skew-maxkv",
+                  "query_lens": [
+                    512
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b1-decode-graph-maxkv",
+                  "query_lens": [
+                    1
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": true
+                },
+                {
+                  "name": "b4-q4-skew-maxkv",
+                  "query_lens": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b4-q512-skew-maxkv",
+                  "query_lens": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b4-decode-graph-maxkv",
+                  "query_lens": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": true
+                }
+              ]
+            }
+          }
+        ],
+        "allocation_events": [
+          {
+            "generation": 1,
+            "builder_id": 133667917029088,
+            "pointer": 24872222720,
+            "nbytes": 33554432,
+            "during_graph_capture": false,
+            "query_calls_in_getter": 0
+          },
+          {
+            "generation": 2,
+            "builder_id": 133667916909120,
+            "pointer": 24872222720,
+            "nbytes": 33554432,
+            "during_graph_capture": false,
+            "query_calls_in_getter": 0
+          }
+        ],
+        "worker_health": {
+          "worker_class": "startup_worker.AutoWorkspaceWorker",
+          "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+          "rank": 0,
+          "pid": 611,
+          "prepared_before_memory_profile": true,
+          "hook_installed": true,
+          "query_calls": 14,
+          "query_calls_in_getter": 0,
+          "retained_query_tensors": 0,
+          "configured_workspace_bytes": 413138944,
+          "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+          "vllm_version": "0.28.0",
+          "startup_selection_seconds": 3.5518898660000104,
+          "native_memory_profile_completed": true,
+          "live_workspaces": [
+            {
+              "pointer": 24872222720,
+              "nbytes": 33554432
+            }
+          ],
+          "live_workspace_count": 1
+        }
+      },
+      "scheduler": {
+        "source": "worker.vllm_config.scheduler_config",
+        "scheduler_reserve_full_isl": true,
+        "max_num_seqs": 4,
+        "max_num_batched_tokens": 512,
+        "enable_chunked_prefill": true,
+        "policy": "fcfs",
+        "watermark": 0.0,
+        "max_model_len": 16512
+      },
+      "capacity_boundary_observation": {
+        "required_tokens": 66048,
+        "required_prompt_tokens": 65536,
+        "actual_token_capacity": 75440,
+        "mode": "auto",
+        "expected_side": "at_or_above_required",
+        "expected_side_met": true,
+        "status": "side_observed",
+        "automatic_cache_adjustment": false,
+        "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+      },
+      "actual_workspace": {
+        "builders": [
+          {
+            "group_index": 0,
+            "attention_index": 0,
+            "builder_index": 0,
+            "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+            "pointer": 24872222720,
+            "nbytes": 33554432
+          }
+        ],
+        "unique_buffers": [
+          {
+            "pointer": 24872222720,
+            "nbytes": 33554432
+          }
+        ],
+        "unique_count": 1,
+        "total_bytes": 33554432,
+        "expected_bytes": 33554432,
+        "validated": true
+      },
+      "kv": {
+        "num_blocks": 4715,
+        "block_size": 16,
+        "total_tensor_bytes": 2163015680,
+        "token_capacity": 75440,
+        "max_concurrency": 4.5687984496124034,
+        "configured_memory_bytes": null,
+        "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+        "allocation_mode": "automatic_gpu_memory_utilization"
+      },
+      "automatic_memory": {
+        "gpu_memory_utilization": 0.65,
+        "requested_memory": 5580390400,
+        "available_kv_cache_memory_bytes": 2163343360,
+        "cudagraph_memory_estimate": 88080384
+      }
+    }
+  },
+  "realpath": {
+    "attention_layers": [
+      [
+        {
+          "name": "model.layers.0.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.1.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.2.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.3.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.4.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.5.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.6.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.7.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.8.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.9.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.10.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.11.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.12.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.13.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.14.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.15.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.16.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.17.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.18.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.19.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.20.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.21.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.22.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.23.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.24.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.25.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.26.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.27.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        }
+      ]
+    ],
+    "runtime": [
+      {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+        "use_v2_model_runner": false,
+        "resolved_graph_mode": "FULL_DECODE_ONLY",
+        "dispatcher_graph_mode": "FULL_DECODE_ONLY",
+        "capture_sizes": [
+          1,
+          4
+        ],
+        "graph_wrappers": [
+          {
+            "class": "vllm.compilation.cuda_graph.CUDAGraphWrapper",
+            "runtime_mode": "FULL",
+            "entries": [
+              {
+                "descriptor": "BatchDescriptor(num_tokens=4, num_reqs=4, uniform=True, has_lora=False, num_active_loras=0)",
+                "captured": true
+              },
+              {
+                "descriptor": "BatchDescriptor(num_tokens=1, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+                "captured": true
+              }
+            ]
+          }
+        ],
+        "flashinfer_package_file": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/__init__.py",
+        "flashinfer_cache_root": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+        "mapped_isolated_kernel_files": [
+          "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/sampling/sampling.so",
+          "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False.so",
+          "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/triton/MIH4X24CEAJDWYGXCZ4EKW6DTWSUG2ZBSBPV7NGI62HAUKJ7F7BQ/cuda_utils.cpython-312-x86_64-linux-gnu.so"
+        ],
+        "initialization_peak_allocated_bytes": 5486165504,
+        "initialization_peak_reserved_bytes": 5549064192,
+        "total_memory_bytes": 8585216000
+      }
+    ],
+    "planning": [
+      {
+        "startup_workspace": {
+          "mode": "auto",
+          "decisions": [
+            {
+              "status": "selected",
+              "chosen_bytes": 33554432,
+              "configured_bytes": 413138944,
+              "observedsource": "workspace_policy range bound + official demand queries",
+              "limits": {
+                "backend": "FLASHINFER",
+                "device_capability": [
+                  8,
+                  9
+                ],
+                "num_sms": 24,
+                "num_qo_heads": 12,
+                "num_kv_heads": 2,
+                "head_dim": 128,
+                "page_size": 16,
+                "max_num_seqs": 4,
+                "max_num_batched_tokens": 512,
+                "max_model_len": 16512,
+                "q_dtype": "bfloat16",
+                "kv_dtype": "bfloat16",
+                "o_dtype": "bfloat16",
+                "enable_cuda_graph": true,
+                "disable_split_kv": false,
+                "has_sinks": false,
+                "sliding_window": -1,
+                "logits_soft_cap": 0.0,
+                "tensor_parallel_size": 1,
+                "decode_context_parallel_size": 1,
+                "fixed_split_size": -1,
+                "num_colocated_ctas": 0,
+                "use_cascade": false,
+                "has_custom_mask": false,
+                "pos_encoding_mode": "NONE"
+              },
+              "fallback": null,
+              "query": {
+                "passed": true,
+                "selector_bytes": 256,
+                "integer_wrapper_bytes": 8388608,
+                "calls": 14,
+                "coverage_source": "range upper bound; concrete checks are startup cross-checks",
+                "rows": [
+                  {
+                    "kind": "prefill",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      512
+                    ],
+                    "kv_lengths": [
+                      16497
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 300,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "prefill",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      512
+                    ],
+                    "kv_lengths": [
+                      16512
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 300,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      1
+                    ],
+                    "kv_lengths": [
+                      1
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 60,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": true,
+                    "query_lengths": [
+                      1
+                    ],
+                    "kv_lengths": [
+                      1
+                    ],
+                    "float_bytes": 2377728,
+                    "int_bytes": 360,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      1
+                    ],
+                    "kv_lengths": [
+                      16512
+                    ],
+                    "float_bytes": 2377728,
+                    "int_bytes": 344,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": true,
+                    "query_lengths": [
+                      1
+                    ],
+                    "kv_lengths": [
+                      16512
+                    ],
+                    "float_bytes": 2377728,
+                    "int_bytes": 360,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "prefill",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      128,
+                      128,
+                      128,
+                      128
+                    ],
+                    "kv_lengths": [
+                      16497,
+                      16497,
+                      16497,
+                      16497
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 312,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "prefill",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      128,
+                      128,
+                      128,
+                      128
+                    ],
+                    "kv_lengths": [
+                      16512,
+                      16512,
+                      16512,
+                      16512
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 312,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "prefill",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      509,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lengths": [
+                      16497,
+                      16497,
+                      16497,
+                      16497
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 360,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "prefill",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      509,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lengths": [
+                      16512,
+                      16512,
+                      16512,
+                      16512
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 360,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lengths": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "float_bytes": 0,
+                    "int_bytes": 72,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": true,
+                    "query_lengths": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lengths": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "float_bytes": 2377728,
+                    "int_bytes": 392,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": false,
+                    "query_lengths": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lengths": [
+                      16512,
+                      16512,
+                      16512,
+                      16512
+                    ],
+                    "float_bytes": 2377728,
+                    "int_bytes": 376,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  },
+                  {
+                    "kind": "decode",
+                    "cuda_graph": true,
+                    "query_lengths": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lengths": [
+                      16512,
+                      16512,
+                      16512,
+                      16512
+                    ],
+                    "float_bytes": 2377728,
+                    "int_bytes": 392,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 4660,
+                    "within_bound": true
+                  }
+                ]
+              },
+              "source": {
+                "query_method": "FlashInfer BatchPrefill/BatchDecode.workspace_size; startup-only boundary checks",
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+                "source_verification": {
+                  "passed": true,
+                  "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                  "files": [
+                    {
+                      "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                      "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                      "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/include/flashinfer/utils.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                      "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                      "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/include/flashinfer/allocator.h",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                      "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                      "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "prefill.py",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                      "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                      "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "decode.py",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                      "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                      "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/csrc/batch_prefill.cu",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                      "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                      "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                      "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                      "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                      "matched": true,
+                      "error": null
+                    }
+                  ],
+                  "vendor_files": [
+                    {
+                      "relative_path": "vendor/pr5236/scheduler.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                      "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                      "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "vendor/pr5236/utils.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                      "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                      "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                      "matched": true,
+                      "error": null
+                    }
+                  ],
+                  "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+                }
+              },
+              "policy": {
+                "supported": true,
+                "reason": "source_locked_default_split_range",
+                "policy_version": "s03-m04-pr5236-host-bound-v1",
+                "source_verification": {
+                  "passed": true,
+                  "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                  "files": [
+                    {
+                      "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                      "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                      "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/include/flashinfer/utils.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                      "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                      "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/include/flashinfer/allocator.h",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                      "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                      "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "prefill.py",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                      "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                      "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "decode.py",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                      "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                      "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/csrc/batch_prefill.cu",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                      "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                      "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                      "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                      "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                      "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                      "matched": true,
+                      "error": null
+                    }
+                  ],
+                  "vendor_files": [
+                    {
+                      "relative_path": "vendor/pr5236/scheduler.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                      "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                      "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                      "matched": true,
+                      "error": null
+                    },
+                    {
+                      "relative_path": "vendor/pr5236/utils.cuh",
+                      "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                      "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                      "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                      "matched": true,
+                      "error": null
+                    }
+                  ],
+                  "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+                },
+                "bound_rows": [
+                  {
+                    "cta_tile_q": 16,
+                    "max_num_tiles_q": 196,
+                    "max_batch_size_if_split": 24,
+                    "padded_float_batch_size": 196,
+                    "padded_int_batch_size": 196,
+                    "float_bound_bytes": 19418112,
+                    "int_bound_bytes": 4660
+                  },
+                  {
+                    "cta_tile_q": 32,
+                    "max_num_tiles_q": 100,
+                    "max_batch_size_if_split": 24,
+                    "padded_float_batch_size": 100,
+                    "padded_int_batch_size": 100,
+                    "float_bound_bytes": 19814400,
+                    "int_bound_bytes": 3412
+                  },
+                  {
+                    "cta_tile_q": 64,
+                    "max_num_tiles_q": 52,
+                    "max_batch_size_if_split": 24,
+                    "padded_float_batch_size": 52,
+                    "padded_int_batch_size": 52,
+                    "float_bound_bytes": 20606976,
+                    "int_bound_bytes": 2788
+                  },
+                  {
+                    "cta_tile_q": 128,
+                    "max_num_tiles_q": 28,
+                    "max_batch_size_if_split": 24,
+                    "padded_float_batch_size": 28,
+                    "padded_int_batch_size": 28,
+                    "float_bound_bytes": 22192128,
+                    "int_bound_bytes": 2476
+                  }
+                ],
+                "float_bound_bytes": 22192128,
+                "int_bound_bytes": 4660,
+                "limits": {
+                  "max_num_seqs": 4,
+                  "max_num_batched_tokens": 512,
+                  "max_model_len": 16512,
+                  "max_num_pages_per_request": 1032,
+                  "page_size": 16,
+                  "num_qo_heads": 12,
+                  "num_kv_heads": 2,
+                  "head_dim": 128,
+                  "num_sms": 24,
+                  "enable_cuda_graph": true
+                },
+                "source_identity": {
+                  "policy_version": "s03-m04-pr5236-host-bound-v1",
+                  "upstream_pr": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+                  "upstream_head_sha": "fdf3c5142b27dc34b8c2cb1aa8fe8910add79486",
+                  "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+                },
+                "coverage": "Pinned FA2 scheduler-derived range bound over every admitted query/KV distribution",
+                "proof": [
+                  "The tile selector returns a member of {16,32,64,128}; all members are bounded.",
+                  "For B requests and R rows, the sum of rounded-up packed query tiles is <= ceil(R*G/t)+B.",
+                  "Default split search bounds split CTAs by floor(2*SM/KV_heads); CUDA graphs additionally pad to the query tile bound.",
+                  "FP32 partial values and statistics follow the pinned allocator's 16-byte aligned order.",
+                  "uniform_q_len restricts row distributions and is covered by the same all-distributions tile bound."
+                ],
+                "selected_bytes": 33554432,
+                "selected_mib": 32.0,
+                "raw_float_bound_mib": 21.1640625,
+                "native_default_bytes": 413138944,
+                "native_prefill_guard_bytes": 12582912,
+                "margin_numerator": 9,
+                "margin_denominator": 8,
+                "minimum_selected_bytes": 33554432,
+                "selection": "shrink",
+                "query_cases": [
+                  {
+                    "name": "b1-q1-skew-maxkv",
+                    "query_lens": [
+                      1
+                    ],
+                    "kv_lens": [
+                      16512
+                    ],
+                    "use_cuda_graph": false
+                  },
+                  {
+                    "name": "b1-q512-skew-maxkv",
+                    "query_lens": [
+                      512
+                    ],
+                    "kv_lens": [
+                      16512
+                    ],
+                    "use_cuda_graph": false
+                  },
+                  {
+                    "name": "b1-decode-graph-maxkv",
+                    "query_lens": [
+                      1
+                    ],
+                    "kv_lens": [
+                      16512
+                    ],
+                    "use_cuda_graph": true
+                  },
+                  {
+                    "name": "b4-q4-skew-maxkv",
+                    "query_lens": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lens": [
+                      16512,
+                      16512,
+                      16512,
+                      16512
+                    ],
+                    "use_cuda_graph": false
+                  },
+                  {
+                    "name": "b4-q512-skew-maxkv",
+                    "query_lens": [
+                      509,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lens": [
+                      16512,
+                      16512,
+                      16512,
+                      16512
+                    ],
+                    "use_cuda_graph": false
+                  },
+                  {
+                    "name": "b4-decode-graph-maxkv",
+                    "query_lens": [
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "kv_lens": [
+                      16512,
+                      16512,
+                      16512,
+                      16512
+                    ],
+                    "use_cuda_graph": true
+                  }
+                ]
+              }
+            }
+          ],
+          "allocation_events": [
+            {
+              "generation": 1,
+              "builder_id": 133667917029088,
+              "pointer": 24872222720,
+              "nbytes": 33554432,
+              "during_graph_capture": false,
+              "query_calls_in_getter": 0
+            },
+            {
+              "generation": 2,
+              "builder_id": 133667916909120,
+              "pointer": 24872222720,
+              "nbytes": 33554432,
+              "during_graph_capture": false,
+              "query_calls_in_getter": 0
+            }
+          ],
+          "worker_health": {
+            "worker_class": "startup_worker.AutoWorkspaceWorker",
+            "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+            "rank": 0,
+            "pid": 611,
+            "prepared_before_memory_profile": true,
+            "hook_installed": true,
+            "query_calls": 14,
+            "query_calls_in_getter": 0,
+            "retained_query_tensors": 0,
+            "configured_workspace_bytes": 413138944,
+            "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+            "vllm_version": "0.28.0",
+            "startup_selection_seconds": 3.5518898660000104,
+            "native_memory_profile_completed": true,
+            "live_workspaces": [
+              {
+                "pointer": 24872222720,
+                "nbytes": 33554432
+              }
+            ],
+            "live_workspace_count": 1
+          }
+        },
+        "scheduler": {
+          "source": "worker.vllm_config.scheduler_config",
+          "scheduler_reserve_full_isl": true,
+          "max_num_seqs": 4,
+          "max_num_batched_tokens": 512,
+          "enable_chunked_prefill": true,
+          "policy": "fcfs",
+          "watermark": 0.0,
+          "max_model_len": 16512
+        },
+        "capacity_boundary_observation": {
+          "required_tokens": 66048,
+          "required_prompt_tokens": 65536,
+          "actual_token_capacity": 75440,
+          "mode": "auto",
+          "expected_side": "at_or_above_required",
+          "expected_side_met": true,
+          "status": "side_observed",
+          "automatic_cache_adjustment": false,
+          "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+        },
+        "actual_workspace": {
+          "builders": [
+            {
+              "group_index": 0,
+              "attention_index": 0,
+              "builder_index": 0,
+              "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+              "pointer": 24872222720,
+              "nbytes": 33554432
+            }
+          ],
+          "unique_buffers": [
+            {
+              "pointer": 24872222720,
+              "nbytes": 33554432
+            }
+          ],
+          "unique_count": 1,
+          "total_bytes": 33554432,
+          "expected_bytes": 33554432,
+          "validated": true
+        },
+        "kv": {
+          "num_blocks": 4715,
+          "block_size": 16,
+          "total_tensor_bytes": 2163015680,
+          "token_capacity": 75440,
+          "max_concurrency": 4.5687984496124034,
+          "configured_memory_bytes": null,
+          "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+          "allocation_mode": "automatic_gpu_memory_utilization"
+        },
+        "automatic_memory": {
+          "gpu_memory_utilization": 0.65,
+          "requested_memory": 5580390400,
+          "available_kv_cache_memory_bytes": 2163343360,
+          "cudagraph_memory_estimate": 88080384
+        }
+      }
+    ],
+    "requested_engine": {
+      "dtype": "bfloat16",
+      "kv_cache_dtype": "auto",
+      "kv_cache_memory_bytes": null,
+      "block_size": 16,
+      "max_model_len": 16512,
+      "max_num_seqs": 4,
+      "max_num_batched_tokens": 512,
+      "tensor_parallel_size": 1,
+      "seed": 20261021,
+      "enforce_eager": false,
+      "enable_prefix_caching": false,
+      "enable_chunked_prefill": true,
+      "disable_log_stats": false,
+      "trust_remote_code": false,
+      "gpu_memory_utilization": 0.65,
+      "compilation_config": {
+        "mode": 0,
+        "cudagraph_mode": "FULL_DECODE_ONLY",
+        "cudagraph_capture_sizes": [
+          1,
+          4
+        ]
+      },
+      "worker_cls": "startup_worker.AutoWorkspaceWorker",
+      "model": "/mnt/d/Models/Qwen2.5-1.5B-Instruct",
+      "attention_config": {
+        "backend": "FLASHINFER"
+      }
+    },
+    "initialization_seconds": 59.47225069499996
+  },
+  "memory": {
+    "worker_process": [
+      {
+        "scope": "entire current model-worker process including initialization, warmups and generation",
+        "peak_allocated_bytes": 5490370048,
+        "peak_reserved_bytes": 5572132864,
+        "current_allocated_bytes": 5455502848,
+        "current_reserved_bytes": 5572132864
+      }
+    ],
+    "initialization_peak_allocated_bytes": 5486165504,
+    "initialization_peak_reserved_bytes": 5549064192,
+    "measurement_note": "Lifetime worker peak includes init, quality, warmups and generation; all RPC outside timing"
+  }
+}

@@ -1,0 +1,2 @@
+# Preserve the exact bytes used by the frozen evidence SHA256 records.
+* -text

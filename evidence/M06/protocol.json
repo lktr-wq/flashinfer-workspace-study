@@ -1,0 +1,614 @@
+{
+  "schema_version": 1,
+  "stage": "FI-S03-M06",
+  "created_date": "2026-10-24",
+  "distro": "CCCL-Ubuntu",
+  "python_linux": "/home/lktr/vllm-project/.venv/bin/python",
+  "model_linux": "/mnt/d/Models/Qwen2.5-1.5B-Instruct",
+  "model_files": [
+    {
+      "name": "config.json",
+      "bytes": 660,
+      "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670"
+    },
+    {
+      "name": "model.safetensors",
+      "bytes": 3087467144,
+      "mtime_ns": 1787570371676871200
+    },
+    {
+      "name": "tokenizer.json",
+      "bytes": 7031645,
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "bytes": 7305,
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    },
+    {
+      "name": "generation_config.json",
+      "bytes": 242,
+      "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6"
+    }
+  ],
+  "expected_versions": {
+    "vllm": "0.28.0",
+    "flashinfer-python": "0.6.16.post3",
+    "torch": "2.13.0",
+    "transformers": "5.16.1"
+  },
+  "expected_model_runner": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+  "engine": {
+    "dtype": "bfloat16",
+    "kv_cache_dtype": "auto",
+    "kv_cache_memory_bytes": null,
+    "block_size": 16,
+    "max_model_len": 16512,
+    "max_num_seqs": 4,
+    "max_num_batched_tokens": 512,
+    "tensor_parallel_size": 1,
+    "seed": 20261021,
+    "enforce_eager": false,
+    "enable_prefix_caching": false,
+    "enable_chunked_prefill": true,
+    "disable_log_stats": false,
+    "trust_remote_code": false,
+    "gpu_memory_utilization": 0.65,
+    "compilation_config": {
+      "mode": 0,
+      "cudagraph_mode": "FULL_DECODE_ONLY",
+      "cudagraph_capture_sizes": [
+        1,
+        4
+      ]
+    },
+    "worker_cls": "startup_worker.AutoWorkspaceWorker"
+  },
+  "jobs": [
+    {
+      "id": "01_DEFAULT",
+      "backend": "FLASHINFER",
+      "phase": "capacity",
+      "workspace_mib": 394,
+      "batch": 1,
+      "engine_overrides": {
+        "kv_cache_memory_bytes": null
+      },
+      "startup_mode": "default"
+    },
+    {
+      "id": "02_STARTUP_AUTO",
+      "backend": "FLASHINFER",
+      "phase": "capacity",
+      "workspace_mib": 394,
+      "batch": 1,
+      "engine_overrides": {
+        "kv_cache_memory_bytes": null
+      },
+      "startup_mode": "auto"
+    },
+    {
+      "id": "03_STARTUP_AUTO",
+      "backend": "FLASHINFER",
+      "phase": "capacity",
+      "workspace_mib": 394,
+      "batch": 2,
+      "engine_overrides": {
+        "kv_cache_memory_bytes": null
+      },
+      "startup_mode": "auto"
+    },
+    {
+      "id": "04_DEFAULT",
+      "backend": "FLASHINFER",
+      "phase": "capacity",
+      "workspace_mib": 394,
+      "batch": 2,
+      "engine_overrides": {
+        "kv_cache_memory_bytes": null
+      },
+      "startup_mode": "default"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "L16384_B4",
+      "input_tokens_per_request": 16384,
+      "batch_size": 4,
+      "output_tokens_per_request": 128
+    }
+  ],
+  "warmup_iterations": 2,
+  "measurement_iterations": 5,
+  "inputs_file": "inputs.json",
+  "gpu_budget_seconds": 1200,
+  "storage_limit_bytes": 1073741824,
+  "storage_stop_bytes": 1006632960,
+  "heartbeat_timeout_seconds": 20,
+  "storage_poll_seconds": 30,
+  "storage_baselines": [
+    {
+      "path": "/mnt/f/FlashInferResearch/S02-D02/cache",
+      "bytes": 28088377
+    }
+  ],
+  "runtime_env": {
+    "01_DEFAULT": {
+      "VLLM_USE_V2_MODEL_RUNNER": "0",
+      "VLLM_RPC_BASE_PATH": "/tmp",
+      "VLLM_ALLOW_INSECURE_SERIALIZATION": "1",
+      "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/hf",
+      "VLLM_CACHE_ROOT": "/mnt/f/FlashInferResearch/S02-D02/cache/vllm",
+      "TORCHINDUCTOR_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/inductor",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "MAX_JOBS": "1",
+      "NVCC_THREADS": "1",
+      "TORCH_CUDA_ARCH_LIST": "8.9",
+      "PYTHONPATH": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed:/mnt/f/FlashInferResearch/S03:/mnt/f/FlashInferResearch/S03-M06",
+      "FLASHINFER_WORKSPACE_BASE": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+      "FLASHINFER_CUDA_ARCH_LIST": "8.9",
+      "FLASHINFER_CUBIN_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cubins",
+      "FLASHINFER_DISABLE_JIT": "",
+      "FLASHINFER_DISABLE_VERSION_CHECK": "",
+      "FLASHINFER_NVCC_THREADS": "1",
+      "TORCH_EXTENSIONS_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/torch_extensions",
+      "TRITON_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/triton",
+      "XDG_CACHE_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/xdg",
+      "CUDA_CACHE_PATH": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cuda",
+      "TMPDIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TEMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "VLLM_FLASHINFER_WORKSPACE_BUFFER_SIZE": "413138944",
+      "VLLM_BATCH_INVARIANT": "0",
+      "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "1",
+      "FI_STARTUP_WORKSPACE_MODE": "default",
+      "VLLM_ENABLE_STARTUP_PLAN": "0"
+    },
+    "02_STARTUP_AUTO": {
+      "VLLM_USE_V2_MODEL_RUNNER": "0",
+      "VLLM_RPC_BASE_PATH": "/tmp",
+      "VLLM_ALLOW_INSECURE_SERIALIZATION": "1",
+      "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/hf",
+      "VLLM_CACHE_ROOT": "/mnt/f/FlashInferResearch/S02-D02/cache/vllm",
+      "TORCHINDUCTOR_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/inductor",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "MAX_JOBS": "1",
+      "NVCC_THREADS": "1",
+      "TORCH_CUDA_ARCH_LIST": "8.9",
+      "PYTHONPATH": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed:/mnt/f/FlashInferResearch/S03:/mnt/f/FlashInferResearch/S03-M06",
+      "FLASHINFER_WORKSPACE_BASE": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+      "FLASHINFER_CUDA_ARCH_LIST": "8.9",
+      "FLASHINFER_CUBIN_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cubins",
+      "FLASHINFER_DISABLE_JIT": "",
+      "FLASHINFER_DISABLE_VERSION_CHECK": "",
+      "FLASHINFER_NVCC_THREADS": "1",
+      "TORCH_EXTENSIONS_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/torch_extensions",
+      "TRITON_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/triton",
+      "XDG_CACHE_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/xdg",
+      "CUDA_CACHE_PATH": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cuda",
+      "TMPDIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TEMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "VLLM_FLASHINFER_WORKSPACE_BUFFER_SIZE": "413138944",
+      "VLLM_BATCH_INVARIANT": "0",
+      "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "1",
+      "FI_STARTUP_WORKSPACE_MODE": "auto",
+      "VLLM_ENABLE_STARTUP_PLAN": "0"
+    },
+    "03_STARTUP_AUTO": {
+      "VLLM_USE_V2_MODEL_RUNNER": "0",
+      "VLLM_RPC_BASE_PATH": "/tmp",
+      "VLLM_ALLOW_INSECURE_SERIALIZATION": "1",
+      "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/hf",
+      "VLLM_CACHE_ROOT": "/mnt/f/FlashInferResearch/S02-D02/cache/vllm",
+      "TORCHINDUCTOR_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/inductor",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "MAX_JOBS": "1",
+      "NVCC_THREADS": "1",
+      "TORCH_CUDA_ARCH_LIST": "8.9",
+      "PYTHONPATH": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed:/mnt/f/FlashInferResearch/S03:/mnt/f/FlashInferResearch/S03-M06",
+      "FLASHINFER_WORKSPACE_BASE": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+      "FLASHINFER_CUDA_ARCH_LIST": "8.9",
+      "FLASHINFER_CUBIN_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cubins",
+      "FLASHINFER_DISABLE_JIT": "",
+      "FLASHINFER_DISABLE_VERSION_CHECK": "",
+      "FLASHINFER_NVCC_THREADS": "1",
+      "TORCH_EXTENSIONS_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/torch_extensions",
+      "TRITON_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/triton",
+      "XDG_CACHE_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/xdg",
+      "CUDA_CACHE_PATH": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cuda",
+      "TMPDIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TEMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "VLLM_FLASHINFER_WORKSPACE_BUFFER_SIZE": "413138944",
+      "VLLM_BATCH_INVARIANT": "0",
+      "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "1",
+      "FI_STARTUP_WORKSPACE_MODE": "auto",
+      "VLLM_ENABLE_STARTUP_PLAN": "0"
+    },
+    "04_DEFAULT": {
+      "VLLM_USE_V2_MODEL_RUNNER": "0",
+      "VLLM_RPC_BASE_PATH": "/tmp",
+      "VLLM_ALLOW_INSECURE_SERIALIZATION": "1",
+      "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "HF_HUB_DISABLE_TELEMETRY": "1",
+      "HF_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/hf",
+      "VLLM_CACHE_ROOT": "/mnt/f/FlashInferResearch/S02-D02/cache/vllm",
+      "TORCHINDUCTOR_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/inductor",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONUNBUFFERED": "1",
+      "TOKENIZERS_PARALLELISM": "false",
+      "MAX_JOBS": "1",
+      "NVCC_THREADS": "1",
+      "TORCH_CUDA_ARCH_LIST": "8.9",
+      "PYTHONPATH": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed:/mnt/f/FlashInferResearch/S03:/mnt/f/FlashInferResearch/S03-M06",
+      "FLASHINFER_WORKSPACE_BASE": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+      "FLASHINFER_CUDA_ARCH_LIST": "8.9",
+      "FLASHINFER_CUBIN_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cubins",
+      "FLASHINFER_DISABLE_JIT": "",
+      "FLASHINFER_DISABLE_VERSION_CHECK": "",
+      "FLASHINFER_NVCC_THREADS": "1",
+      "TORCH_EXTENSIONS_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/torch_extensions",
+      "TRITON_CACHE_DIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/triton",
+      "XDG_CACHE_HOME": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/xdg",
+      "CUDA_CACHE_PATH": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/cuda",
+      "TMPDIR": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "TEMP": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/tmp",
+      "VLLM_FLASHINFER_WORKSPACE_BUFFER_SIZE": "413138944",
+      "VLLM_BATCH_INVARIANT": "0",
+      "VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS": "1",
+      "FI_STARTUP_WORKSPACE_MODE": "default",
+      "VLLM_ENABLE_STARTUP_PLAN": "0"
+    }
+  },
+  "isolated_variants": {
+    "original": {
+      "package_root": "/mnt/f/FlashInferResearch/S02-D02/overlay/original/flashinfer",
+      "cache_root": "/mnt/f/FlashInferResearch/S02-D02/cache/original",
+      "package_entry_sha256": "bd6a85364635bce75b187f5a09f557fedbb670890062f8b1a094493ab84a423f",
+      "source_fingerprint": "2848054a2825b4f7b7067aef3586ce4ffd885aa994ff21bc39ca3c8fc7f49e5f",
+      "precompiled_modules": [
+        {
+          "kind": "batch_prefill_bf16",
+          "uri": "batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False",
+          "path": "/mnt/f/FlashInferResearch/S02-D02/cache/original/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False.so",
+          "sha256": "d8d57acbcebae36ab462bf3820a790c0869ac50e49824897c622d1032dfc0229",
+          "bytes": 2294248,
+          "ninja_path": "/mnt/f/FlashInferResearch/S02-D02/cache/original/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False/build.ninja",
+          "ninja_sha256": "e83439254a6afe42e89571ffae891076624e9c59136af173ba3ee31dc70ab7a1",
+          "overlay_include": "/mnt/f/FlashInferResearch/S02-D02/overlay/original/flashinfer/data/include"
+        }
+      ]
+    },
+    "fixed": {
+      "package_root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+      "cache_root": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+      "package_entry_sha256": "bd6a85364635bce75b187f5a09f557fedbb670890062f8b1a094493ab84a423f",
+      "source_fingerprint": "e0b3f4b050425ba6775c57a92a6d606c7012da5b8c334bc46114c410b3632b14",
+      "precompiled_modules": [
+        {
+          "kind": "batch_prefill_bf16",
+          "uri": "batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False",
+          "path": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False.so",
+          "sha256": "8373aad78c49315e996362bb5014371da91e2fabc6ff7f5d607823bb5021ed90",
+          "bytes": 2306536,
+          "ninja_path": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False/build.ninja",
+          "ninja_sha256": "1fb184fab5d87328e7cf8c0041a2a112e78d4d1705ea45d8d40453cbf712e573",
+          "overlay_include": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include"
+        },
+        {
+          "kind": "batch_decode_bf16",
+          "uri": "batch_decode_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False",
+          "path": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_decode_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False/batch_decode_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False.so",
+          "sha256": "db7da99d3725f9e4036254f1e6aa04b6551551b6a0e4f0af1b6fef7c38caaaea",
+          "bytes": 472872,
+          "ninja_path": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_decode_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False/build.ninja",
+          "ninja_sha256": "43238bee10f09bcdaf076f8bc843d56e9b10b3ca3c22a625cddf8620039d1890",
+          "overlay_include": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include"
+        }
+      ]
+    }
+  },
+  "parent_baseline": {
+    "root": "/mnt/f/FlashInferResearch/S02-D02",
+    "manifest_sha256": "bf7ebfb55ed7635d6dbabfc1f270024258d6e991350994bb9baca9173ee21b8a",
+    "overlay_receipt_sha256": "b00c2525000c02c7544f9091fbb8234a28fa9e9bd274d0b4aae64848b34de8d9",
+    "reference_summary_sha256": "477b31256879998cde849ae96f229ea996127f8cf91e551480892d2266742029",
+    "accepted_remaining_numeric_difference": "User accepted one extreme-low-probability teacher token logprob difference 0.119989 vs previous threshold0.1; original zero-output defect recovered."
+  },
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "ignore_eos": true,
+    "max_tokens": 128,
+    "detokenize": true,
+    "seed": 20261022
+  },
+  "timing_scope": "GPU stage includes model loading, startup query and graph preparation, original six quality tasks, unchanged performance warmups/measurements, and four concurrent-quality scenarios each repeated twice. All work shares the 1200-second stage cap. Mixed QA batches use three unchanged 128-token companions plus one normal-EOS QA and are separate from pure performance timing.",
+  "official_benchmark_source": "vllm/benchmarks/latency.py:125-135",
+  "resume_unit": "completed case JSON; resume preserves finished cases and restarts an unfinished case; historical time is retained",
+  "identity_files": [
+    "protocol.json",
+    "inputs.json",
+    "capacity-inputs.json",
+    "quality-inputs.json",
+    "concurrent-quality-inputs.json",
+    "prepare_concurrent_quality.py",
+    "concurrent-quality-preparation.json",
+    "workspace_worker.py",
+    "startup_worker.py",
+    "workspace_policy.py",
+    "policy-evidence.json",
+    "policy-cpu-check.json",
+    "runner.py",
+    "analyze.py",
+    "launch.ps1",
+    "status.ps1",
+    "stop.ps1",
+    "开始或继续正确性验收.cmd",
+    "查询进度.cmd",
+    "停止并保存.cmd",
+    "vendor/pr5236/scheduler.cuh",
+    "vendor/pr5236/utils.cuh"
+  ],
+  "worker_script": "workspace_worker.py",
+  "reuse_s03_root_linux": "/mnt/f/FlashInferResearch/S03",
+  "quality_inputs_file": "quality-inputs.json",
+  "capacity_inputs_file": "capacity-inputs.json",
+  "parent_s03_ledger": {
+    "path": "/mnt/f/FlashInferResearch/S03/ledger.json",
+    "sha256": "10090088efa57f787186bb65383549288eb38f5e12554924f55bbab0db6110f8"
+  },
+  "parent_gpu_charged_seconds": 710.596803747,
+  "parent_gpu_budget_seconds": 2700,
+  "thresholds": {},
+  "phases": {
+    "capacity": {
+      "engine": {
+        "dtype": "bfloat16",
+        "kv_cache_dtype": "auto",
+        "kv_cache_memory_bytes": null,
+        "block_size": 16,
+        "max_model_len": 16512,
+        "max_num_seqs": 4,
+        "max_num_batched_tokens": 512,
+        "tensor_parallel_size": 1,
+        "seed": 20261021,
+        "enforce_eager": false,
+        "enable_prefix_caching": false,
+        "enable_chunked_prefill": true,
+        "disable_log_stats": false,
+        "trust_remote_code": false,
+        "gpu_memory_utilization": 0.65,
+        "compilation_config": {
+          "mode": 0,
+          "cudagraph_mode": "FULL_DECODE_ONLY",
+          "cudagraph_capture_sizes": [
+            1,
+            4
+          ]
+        },
+        "worker_cls": "startup_worker.AutoWorkspaceWorker"
+      },
+      "cases": [
+        {
+          "case_id": "L16384_B4",
+          "input_tokens_per_request": 16384,
+          "batch_size": 4,
+          "output_tokens_per_request": 128
+        }
+      ],
+      "inputs_file": "capacity-inputs.json",
+      "warmup_iterations": 2,
+      "measurement_iterations": 5,
+      "inputs_sha256": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8"
+    }
+  },
+  "reused_files": {
+    "/mnt/f/FlashInferResearch/S03/bench_worker.py": "9b920b1462320781849f94f995195c2f00fbd1ca3bc363adca692609fc1f7bd4",
+    "/mnt/f/FlashInferResearch/S03/bench_helpers.py": "d05af00aab1c03d957873744ef8fa23f5c7f567692fcfc58e14265baa57e4a94",
+    "/mnt/f/FlashInferResearch/S03-M05/analyze.py": "e88fd297fd9ad6f0e4dd72494dafb9fb673130a94e3a33821c2125d4db52d62f"
+  },
+  "quality_inputs_sha256": "fe804b0f7c4a5ef0194abd27b8f674740b3c72306f05daabf97e6c048d665594",
+  "parent_m01_ledger": {
+    "path": "/mnt/f/FlashInferResearch/S03-M01/ledger.json",
+    "sha256": "8acca4ce6f3632a0ea28f85cf8e86523f24215d0ba52b1f02244df4acff35479"
+  },
+  "parent_m01_gpu_charged_seconds": 688.270119219,
+  "parent_m01_gpu_budget_seconds": 1800,
+  "research_kind": "1_to_2",
+  "per_job_hard_limit_seconds": 330,
+  "parent_r01_ledger": {
+    "path": "/mnt/f/FlashInferResearch/S03-M01-R01/ledger.json",
+    "sha256": "720de7003a19f1a7b7c88c3c427df808ca261628ee02a86d6a993b4a52a2949e"
+  },
+  "parent_r01_gpu_charged_seconds": 379.564977797,
+  "parent_r01_gpu_budget_seconds": 1111.729880781,
+  "prior_r01_evidence": {
+    "root_linux": "/mnt/f/FlashInferResearch/S03-M01-R01",
+    "root_windows": "F:\\FlashInferResearch\\S03-M01-R01",
+    "ledger_sha256": "720de7003a19f1a7b7c88c3c427df808ca261628ee02a86d6a993b4a52a2949e",
+    "protocol_sha256": "640f503f5acee940e866aa444d265223922d82a2925d41dd15abdc7cfdb3c92a",
+    "manifest_sha256": "da90d6a9275f149f4ea000ad9eabd44d36e211bb3855ee3b1c245061b80b3d40",
+    "original_gate_sha256": "b19b73f7e5db18d5f08e41eacbf4fe838e314d27341a6f1e9d4b2c01d25352c3"
+  },
+  "acceptance": {
+    "entry": "user_approved_correctness_check_in_the_beneficial_16K_four_request_state",
+    "collection": "four committed processes, one unchanged performance case plus four mixed scenarios with two repeats each",
+    "startup": "same validated source-bound selection, actual memory recovery and stable formal workspace",
+    "quality": "new task absolute correctness, normal EOS, finite selected probabilities and paired regressions separately reported; old six tasks and their scores retained",
+    "pressure_coverage": "main slot4 checks are assessed with actual default/automatic admission timestamps",
+    "performance": "unchanged 16K four-by-128 workload, two warmups and five formal measurements; mixed QA timing stays separate",
+    "outcome": "save all scores and failures without automatic task retuning or new experiments"
+  },
+  "provenance": {
+    "classification": "1_to_2",
+    "upstream_reused": [
+      {
+        "url": "https://github.com/vllm-project/vllm/pull/28269",
+        "role": "existing workspace-size environment option used directly"
+      },
+      {
+        "url": "https://github.com/flashinfer-ai/flashinfer/pull/4401",
+        "role": "previously validated upstream numerical fix reused"
+      },
+      {
+        "url": "https://github.com/flashinfer-ai/flashinfer/pull/3741",
+        "role": "native concrete plan workspace_size query"
+      },
+      {
+        "url": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+        "role": "closed unmerged proposal; attributed port of conservative FA2 host sizing formula"
+      }
+    ],
+    "upstream_related": [
+      {
+        "url": "https://github.com/flashinfer-ai/flashinfer/pull/3741",
+        "role": "existing workspace sizing helper; prior-art reference"
+      },
+      {
+        "url": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+        "role": "shape-range upper bound proposal; prior-art reference"
+      },
+      {
+        "url": "https://github.com/vllm-project/vllm/pull/60874",
+        "role": "related DeepSeek workspace-to-KV resource tradeoff; prior-art reference"
+      }
+    ],
+    "new_work": "Frozen reference-answer tasks in the actual 16K four-request admission setting, native end-state timing and explicit correctness/regression scoring. Reuse M05 serving paths, source-bound workspace policy and unchanged performance input."
+  },
+  "quality_case_count": 6,
+  "long_quality_case_count": 3,
+  "parent_m02_ledger": {
+    "path": "/mnt/f/FlashInferResearch/S03-M02/ledger.json",
+    "sha256": "5285dd6117246922c107b20b801c38aba3cd52374d1aa4f451f85c0642700f93"
+  },
+  "parent_m02_gpu_charged_seconds": 464.609150575,
+  "parent_m02_gpu_budget_seconds": 732.164902984,
+  "approved_parent_gpu_charged_seconds": 4091.642331315,
+  "approved_combined_gpu_budget_seconds": 5291.642331315,
+  "approved_m01_chain_gpu_budget_seconds": 4581.045527568,
+  "prior_m02_evidence": {
+    "root_linux": "/mnt/f/FlashInferResearch/S03-M02",
+    "root_windows": "F:\\FlashInferResearch\\S03-M02",
+    "ledger_sha256": "5285dd6117246922c107b20b801c38aba3cd52374d1aa4f451f85c0642700f93",
+    "protocol_sha256": "14b1c1a305a8fa276d3962a58585e3b23bf9960c5b0d0fbffcf708e204b99205",
+    "manifest_sha256": "e30cf08b9a437240f04e9627b02225bc6e46929d040d90f6482faf7779a62e45",
+    "summary_sha256": "ce509c7c05164c6e0aba143f84ac6d1bc5cb7d88a2151e0c75cb67caf82f0a99"
+  },
+  "parent_m03_gpu_charged_seconds": 437.887388085,
+  "parent_m03_gpu_budget_seconds": 1200,
+  "parent_m03_ledger": {
+    "path": "/mnt/f/FlashInferResearch/S03-M03/ledger.json",
+    "sha256": "e1bdc6c3b521298e66dfb9040c3e13b0c3a30063588a00705d65a3c6463e9119"
+  },
+  "prior_m03_evidence": {
+    "root_linux": "/mnt/f/FlashInferResearch/S03-M03",
+    "root_windows": "F:\\FlashInferResearch\\S03-M03",
+    "ledger_sha256": "e1bdc6c3b521298e66dfb9040c3e13b0c3a30063588a00705d65a3c6463e9119",
+    "protocol_sha256": "25b54c5a9d99c061c7bf25df422ac5ac427c67ef5327ab2f2071e673d328b090",
+    "manifest_sha256": "9959d35f99a203ede4d938d6c3f6b9db0b859a1d7eb08b53f05892abb4be5511",
+    "summary_sha256": "ef92d22dabdefcf2de8b577dff6a159b384b5681092e8558153c29239abbb4c7"
+  },
+  "startup_workspace": {
+    "policy_evidence_file": "policy-evidence.json",
+    "policy_evidence_sha256": "9ea39cdfe067e18343f0a30f03f734593a2fd6129b1625dafc696e489f17d3d2",
+    "mode_env": "FI_STARTUP_WORKSPACE_MODE",
+    "configured_bytes": 413138944,
+    "integration": "startup_worker.AutoWorkspaceWorker",
+    "supported_scope": "Qwen2.5-1.5B BF16 SM89 native FA2, TP/DCP=1, page16, no prefix cascade or speculative decoding",
+    "safety": "source-locked conservative range bound plus native concrete workspace_size queries; unsupported falls back to native allocation",
+    "expected_source": {
+      "query_method": "FlashInfer BatchPrefill/BatchDecode.workspace_size; startup-only boundary checks",
+      "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+      "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6"
+    }
+  },
+  "additional_gpu_budget_seconds": 968.069123306,
+  "carried_forward_gpu_seconds": 231.930876694,
+  "parent_m04_gpu_charged_seconds": 442.644768586,
+  "parent_m04_gpu_budget_seconds": 762.112611915,
+  "parent_m04_ledger": {
+    "path": "/mnt/f/FlashInferResearch/S03-M04/ledger.json",
+    "sha256": "6e1321ce73da6382bf90dc100fa8e4e5b1eda4345119cce9b8b2db7ab764deb7"
+  },
+  "prior_m04_evidence": {
+    "root_linux": "/mnt/f/FlashInferResearch/S03-M04",
+    "root_windows": "F:\\FlashInferResearch\\S03-M04",
+    "ledger_sha256": "6e1321ce73da6382bf90dc100fa8e4e5b1eda4345119cce9b8b2db7ab764deb7",
+    "protocol_sha256": "e397dfaa10596ff67e4b94ff0d6423e3b740c61426dd9c5f9513e0a7905aabdf",
+    "manifest_sha256": "bdfee60e75d2a06452558dedad99a59f3736a506edd626c081f39acf01365eee",
+    "summary_sha256": "3447d72a5d3f6e2b9e66f6ef76404b02f47cf3cb30971ff2353b1fa11c43ef40"
+  },
+  "scheduler_observation": {
+    "expected_scheduler_reserve_full_isl": true,
+    "metrics_source": "native vLLM RequestOutput.metrics RequestStateStats",
+    "no_step_hook": true,
+    "input_boundary_tokens": 65536,
+    "maximum_batch_history_tokens": 66048,
+    "reference_maximum_batch_history_tokens": 49664,
+    "boundary_rule": "reference_maximum <= actual default KV < pressure_maximum <= actual automatic KV",
+    "missing_boundary_action": "save measurements and report boundary not formed; preserve native KV allocation"
+  },
+  "inputs_sha256": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8",
+  "capacity_inputs_sha256": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8",
+  "parent_m05_gpu_charged_seconds": 968.069123306,
+  "parent_m05_gpu_budget_seconds": 1200,
+  "parent_m05_ledger": {
+    "path": "/mnt/f/FlashInferResearch/S03-M05/ledger.json",
+    "sha256": "b28ef3c0f789fa3ec1a1bddab4e9da7088a08e4064f8f48739cda78a7aa32629"
+  },
+  "prior_m05_evidence": {
+    "root_linux": "/mnt/f/FlashInferResearch/S03-M05",
+    "root_windows": "F:\\FlashInferResearch\\S03-M05",
+    "ledger_sha256": "b28ef3c0f789fa3ec1a1bddab4e9da7088a08e4064f8f48739cda78a7aa32629",
+    "protocol_sha256": "299a0ab140514009ff483c162041131f280ec8ff09dc0b3c70d5911a433a41ef",
+    "manifest_sha256": "6172e6094a1b3f198ac1b38dae95285c647a4f8908922091141600d370b6fc56",
+    "summary_sha256": "4a8b3480063c16319125d7d9aaed8329f0e48fe8022738390715470d5dcdbc78"
+  },
+  "concurrent_quality_inputs_file": "concurrent-quality-inputs.json",
+  "concurrent_quality_measurement_iterations": 2,
+  "concurrent_quality": {
+    "inputs_file": "concurrent-quality-inputs.json",
+    "inputs_sha256": "8bdc9c239fe93dc6e509aabdb32317daf370f52c2de51c6fb6a0112f151aa15d",
+    "measurement_repeats": 2,
+    "cases": [
+      "CQ_LOOKUP_SLOT4",
+      "CQ_LATEST_SLOT4",
+      "CQ_COMBINE_SLOT4",
+      "CQ_LOOKUP_SLOT1"
+    ],
+    "main_qa_slot": 4,
+    "reference_qa_slot": 1,
+    "qa_max_tokens": 128,
+    "companion_output_tokens": 128,
+    "qa_ignore_eos": false,
+    "score": "pre-frozen JSON field values and types; normal finish and finite selected-token logprobs",
+    "regression": "report default-correct/auto-wrong pairs and baseline-correct denominator; preserve common errors",
+    "coverage": "observe native QA admission relative to earliest companion completion; slot1 is role reference",
+    "timing": "mixed quality batches reported separately from unchanged four-by-128 performance batches"
+  },
+  "concurrent_quality_inputs_sha256": "8bdc9c239fe93dc6e509aabdb32317daf370f52c2de51c6fb6a0112f151aa15d"
+}

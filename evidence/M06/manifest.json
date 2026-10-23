@@ -1,0 +1,27 @@
+{
+  "stage": "FI-S03-M06",
+  "files": {
+    "protocol.json": "ebacd2bfd8b46ba14f4ae0470249bce3fdb3557bbb8e5f02ed4077b0b59ac5bf",
+    "inputs.json": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8",
+    "capacity-inputs.json": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8",
+    "quality-inputs.json": "fe804b0f7c4a5ef0194abd27b8f674740b3c72306f05daabf97e6c048d665594",
+    "concurrent-quality-inputs.json": "8bdc9c239fe93dc6e509aabdb32317daf370f52c2de51c6fb6a0112f151aa15d",
+    "prepare_concurrent_quality.py": "d73b168635cd9899a5f8700e279bd8d374e1c51d6ef054323d44be68a1175227",
+    "concurrent-quality-preparation.json": "da4dc49bb414e0c7cb1383fbb14f8cbfdf2304889c91b36a94e47e93a12aa25e",
+    "workspace_worker.py": "74a0cf377af1cbfd7cca695ee742ee1e7cd4250f2a425a1390542dac26f8df70",
+    "startup_worker.py": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+    "workspace_policy.py": "21eebcf7a885b23f2039c0460c168376b67c9d0b85da0844d7ada3f92cd512b8",
+    "policy-evidence.json": "9ea39cdfe067e18343f0a30f03f734593a2fd6129b1625dafc696e489f17d3d2",
+    "policy-cpu-check.json": "cb65b0e6c99897d983cef128d066f1744257770589792786d5c3b53dea793858",
+    "runner.py": "b864c67f45b9939dd8c3a6f855a710c6dc41736886d7dba4bb1809f1c4314b44",
+    "analyze.py": "2ee7f43cf467476d02c6e903861721796e9404fa9e08e49f135844e9cf13bc2e",
+    "launch.ps1": "978477249699170cc752c8b2b91c7832608db85030f674f433e58b9b26b966b9",
+    "status.ps1": "d671ba0a64c5e77b28b65317f5a8925cab983d9b06f2cdf43e78fde4fd4b4b85",
+    "stop.ps1": "c5966d1fb9350fa6a1c5315b847a50bfeb49adc1980fc2ef2fe311757d528c59",
+    "开始或继续正确性验收.cmd": "7e20d21ccdb782620206b4adff0d638041e09d1375116d9618f1eff3c1ab456b",
+    "查询进度.cmd": "0ea72e9003f0a26f0f6468974e96b0d7cc83d39530c3e126c224fe049087da25",
+    "停止并保存.cmd": "080d3d7fc9b9619f24cc10824a25f81247a269450bbab23711460d51f60b2bad",
+    "vendor/pr5236/scheduler.cuh": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+    "vendor/pr5236/utils.cuh": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db"
+  }
+}

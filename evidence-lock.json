@@ -1,0 +1,10 @@
+{
+  "source_stage": "FI-S03-M06",
+  "frozen_date": "2026-10-24",
+  "files": {
+    "manifest.json": "cb4e71e34bae3ae474e58c48d7c15f0eaceec6b7ea46d3fb857f8395b535b3d9",
+    "protocol.json": "ebacd2bfd8b46ba14f4ae0470249bce3fdb3557bbb8e5f02ed4077b0b59ac5bf",
+    "ledger.json": "cef7c9eea3565437ea9cfdea7deac43047bf51dd2b5b41fef521fa57e623c5e7",
+    "summary.json": "d4fbb18afbf9473e6ee750a9e607d66fec40de93666c46a8f04ca52b26e11817"
+  }
+}

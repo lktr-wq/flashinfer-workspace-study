@@ -1,0 +1,960 @@
+{
+  "attention_layers": [
+    [
+      {
+        "name": "model.layers.0.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.1.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.2.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.3.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.4.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.5.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.6.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.7.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.8.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.9.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.10.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.11.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.12.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.13.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.14.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.15.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.16.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.17.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.18.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.19.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.20.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.21.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.22.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.23.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.24.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.25.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.26.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      },
+      {
+        "name": "model.layers.27.self_attn.attn",
+        "backend": "FLASHINFER",
+        "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+      }
+    ]
+  ],
+  "runtime": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "compute_capability": [
+        8,
+        9
+      ],
+      "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+      "use_v2_model_runner": false,
+      "resolved_graph_mode": "FULL_DECODE_ONLY",
+      "dispatcher_graph_mode": "FULL_DECODE_ONLY",
+      "capture_sizes": [
+        1,
+        4
+      ],
+      "graph_wrappers": [
+        {
+          "class": "vllm.compilation.cuda_graph.CUDAGraphWrapper",
+          "runtime_mode": "FULL",
+          "entries": [
+            {
+              "descriptor": "BatchDescriptor(num_tokens=4, num_reqs=4, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            },
+            {
+              "descriptor": "BatchDescriptor(num_tokens=1, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+              "captured": true
+            }
+          ]
+        }
+      ],
+      "flashinfer_package_file": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/__init__.py",
+      "flashinfer_cache_root": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+      "mapped_isolated_kernel_files": [
+        "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/sampling/sampling.so",
+        "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False.so",
+        "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/triton/MIH4X24CEAJDWYGXCZ4EKW6DTWSUG2ZBSBPV7NGI62HAUKJ7F7BQ/cuda_utils.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "initialization_peak_allocated_bytes": 5486165504,
+      "initialization_peak_reserved_bytes": 5549064192,
+      "total_memory_bytes": 8585216000
+    }
+  ],
+  "planning": [
+    {
+      "startup_workspace": {
+        "mode": "auto",
+        "decisions": [
+          {
+            "status": "selected",
+            "chosen_bytes": 33554432,
+            "configured_bytes": 413138944,
+            "observedsource": "workspace_policy range bound + official demand queries",
+            "limits": {
+              "backend": "FLASHINFER",
+              "device_capability": [
+                8,
+                9
+              ],
+              "num_sms": 24,
+              "num_qo_heads": 12,
+              "num_kv_heads": 2,
+              "head_dim": 128,
+              "page_size": 16,
+              "max_num_seqs": 4,
+              "max_num_batched_tokens": 512,
+              "max_model_len": 16512,
+              "q_dtype": "bfloat16",
+              "kv_dtype": "bfloat16",
+              "o_dtype": "bfloat16",
+              "enable_cuda_graph": true,
+              "disable_split_kv": false,
+              "has_sinks": false,
+              "sliding_window": -1,
+              "logits_soft_cap": 0.0,
+              "tensor_parallel_size": 1,
+              "decode_context_parallel_size": 1,
+              "fixed_split_size": -1,
+              "num_colocated_ctas": 0,
+              "use_cascade": false,
+              "has_custom_mask": false,
+              "pos_encoding_mode": "NONE"
+            },
+            "fallback": null,
+            "query": {
+              "passed": true,
+              "selector_bytes": 256,
+              "integer_wrapper_bytes": 8388608,
+              "calls": 14,
+              "coverage_source": "range upper bound; concrete checks are startup cross-checks",
+              "rows": [
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    512
+                  ],
+                  "kv_lengths": [
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 300,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    512
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 300,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    1
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 60,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    1
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 344,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    128,
+                    128,
+                    128,
+                    128
+                  ],
+                  "kv_lengths": [
+                    16497,
+                    16497,
+                    16497,
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 312,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    128,
+                    128,
+                    128,
+                    128
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 312,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16497,
+                    16497,
+                    16497,
+                    16497
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "prefill",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 360,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "float_bytes": 0,
+                  "int_bytes": 72,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 392,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": false,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 376,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                },
+                {
+                  "kind": "decode",
+                  "cuda_graph": true,
+                  "query_lengths": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lengths": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "float_bytes": 2377728,
+                  "int_bytes": 392,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 4660,
+                  "within_bound": true
+                }
+              ]
+            },
+            "source": {
+              "query_method": "FlashInfer BatchPrefill/BatchDecode.workspace_size; startup-only boundary checks",
+              "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+              "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+              "source_verification": {
+                "passed": true,
+                "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                "files": [
+                  {
+                    "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                    "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                    "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/allocator.h",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                    "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "prefill.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                    "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "decode.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                    "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                    "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                    "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "vendor_files": [
+                  {
+                    "relative_path": "vendor/pr5236/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                    "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "vendor/pr5236/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                    "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              }
+            },
+            "policy": {
+              "supported": true,
+              "reason": "source_locked_default_split_range",
+              "policy_version": "s03-m04-pr5236-host-bound-v1",
+              "source_verification": {
+                "passed": true,
+                "root": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer",
+                "files": [
+                  {
+                    "relative_path": "data/include/flashinfer/attention/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/attention/scheduler.cuh",
+                    "expected_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "actual_sha256": "09c6e89861f48f3b79fee029b6e44c8e16f41d73053fb0154f0e636498d0655f",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/utils.cuh",
+                    "expected_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "actual_sha256": "da42b5f100ccb02a4c05c6f82157ce604dcc535b5d7c1b38a68e42865a7e650e",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/include/flashinfer/allocator.h",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/include/flashinfer/allocator.h",
+                    "expected_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "actual_sha256": "3d80e3d3d29b1ae41218eb1167ca0059f923a9ccd69de79905d7f37df7cb2109",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "prefill.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/prefill.py",
+                    "expected_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "actual_sha256": "c315341a5472fcb5cff58de2eb9cda501a45903d769ea9cc79da59852a137632",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "decode.py",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/decode.py",
+                    "expected_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "actual_sha256": "f67c5704d8ee1c7130b97adde8df8079faa42a11f37a08afa33ab26da71c1fe7",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill.cu",
+                    "expected_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "actual_sha256": "3b669453ca1c8740d3043287f5dce726e79f81e05fcc28955e6002d52950a365",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "data/csrc/batch_prefill_jit_binding.cu",
+                    "path": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/data/csrc/batch_prefill_jit_binding.cu",
+                    "expected_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "actual_sha256": "dad0d81c55b92f71a634cb8240dcb0d150aa6ffd391ef3ef5d87b6207eeca4fc",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "vendor_files": [
+                  {
+                    "relative_path": "vendor/pr5236/scheduler.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/scheduler.cuh",
+                    "expected_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "actual_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27",
+                    "matched": true,
+                    "error": null
+                  },
+                  {
+                    "relative_path": "vendor/pr5236/utils.cuh",
+                    "path": "/mnt/f/FlashInferResearch/S03-M06/vendor/pr5236/utils.cuh",
+                    "expected_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "actual_sha256": "d21b554c57bdd3eec6ffeb130f551611d0b60210c6c84c69a1575d9e7677f7db",
+                    "matched": true,
+                    "error": null
+                  }
+                ],
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              },
+              "bound_rows": [
+                {
+                  "cta_tile_q": 16,
+                  "max_num_tiles_q": 196,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 196,
+                  "padded_int_batch_size": 196,
+                  "float_bound_bytes": 19418112,
+                  "int_bound_bytes": 4660
+                },
+                {
+                  "cta_tile_q": 32,
+                  "max_num_tiles_q": 100,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 100,
+                  "padded_int_batch_size": 100,
+                  "float_bound_bytes": 19814400,
+                  "int_bound_bytes": 3412
+                },
+                {
+                  "cta_tile_q": 64,
+                  "max_num_tiles_q": 52,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 52,
+                  "padded_int_batch_size": 52,
+                  "float_bound_bytes": 20606976,
+                  "int_bound_bytes": 2788
+                },
+                {
+                  "cta_tile_q": 128,
+                  "max_num_tiles_q": 28,
+                  "max_batch_size_if_split": 24,
+                  "padded_float_batch_size": 28,
+                  "padded_int_batch_size": 28,
+                  "float_bound_bytes": 22192128,
+                  "int_bound_bytes": 2476
+                }
+              ],
+              "float_bound_bytes": 22192128,
+              "int_bound_bytes": 4660,
+              "limits": {
+                "max_num_seqs": 4,
+                "max_num_batched_tokens": 512,
+                "max_model_len": 16512,
+                "max_num_pages_per_request": 1032,
+                "page_size": 16,
+                "num_qo_heads": 12,
+                "num_kv_heads": 2,
+                "head_dim": 128,
+                "num_sms": 24,
+                "enable_cuda_graph": true
+              },
+              "source_identity": {
+                "policy_version": "s03-m04-pr5236-host-bound-v1",
+                "upstream_pr": "https://github.com/flashinfer-ai/flashinfer/pull/5236",
+                "upstream_head_sha": "fdf3c5142b27dc34b8c2cb1aa8fe8910add79486",
+                "upper_bound_source_sha256": "2940aac0d4d4aa1eb3d4ed1ac1b0a6240f2b27f845b7b6254b32d758a6293d27"
+              },
+              "coverage": "Pinned FA2 scheduler-derived range bound over every admitted query/KV distribution",
+              "proof": [
+                "The tile selector returns a member of {16,32,64,128}; all members are bounded.",
+                "For B requests and R rows, the sum of rounded-up packed query tiles is <= ceil(R*G/t)+B.",
+                "Default split search bounds split CTAs by floor(2*SM/KV_heads); CUDA graphs additionally pad to the query tile bound.",
+                "FP32 partial values and statistics follow the pinned allocator's 16-byte aligned order.",
+                "uniform_q_len restricts row distributions and is covered by the same all-distributions tile bound."
+              ],
+              "selected_bytes": 33554432,
+              "selected_mib": 32.0,
+              "raw_float_bound_mib": 21.1640625,
+              "native_default_bytes": 413138944,
+              "native_prefill_guard_bytes": 12582912,
+              "margin_numerator": 9,
+              "margin_denominator": 8,
+              "minimum_selected_bytes": 33554432,
+              "selection": "shrink",
+              "query_cases": [
+                {
+                  "name": "b1-q1-skew-maxkv",
+                  "query_lens": [
+                    1
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b1-q512-skew-maxkv",
+                  "query_lens": [
+                    512
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b1-decode-graph-maxkv",
+                  "query_lens": [
+                    1
+                  ],
+                  "kv_lens": [
+                    16512
+                  ],
+                  "use_cuda_graph": true
+                },
+                {
+                  "name": "b4-q4-skew-maxkv",
+                  "query_lens": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b4-q512-skew-maxkv",
+                  "query_lens": [
+                    509,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": false
+                },
+                {
+                  "name": "b4-decode-graph-maxkv",
+                  "query_lens": [
+                    1,
+                    1,
+                    1,
+                    1
+                  ],
+                  "kv_lens": [
+                    16512,
+                    16512,
+                    16512,
+                    16512
+                  ],
+                  "use_cuda_graph": true
+                }
+              ]
+            }
+          }
+        ],
+        "allocation_events": [
+          {
+            "generation": 1,
+            "builder_id": 133667917029088,
+            "pointer": 24872222720,
+            "nbytes": 33554432,
+            "during_graph_capture": false,
+            "query_calls_in_getter": 0
+          },
+          {
+            "generation": 2,
+            "builder_id": 133667916909120,
+            "pointer": 24872222720,
+            "nbytes": 33554432,
+            "during_graph_capture": false,
+            "query_calls_in_getter": 0
+          }
+        ],
+        "worker_health": {
+          "worker_class": "startup_worker.AutoWorkspaceWorker",
+          "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+          "rank": 0,
+          "pid": 611,
+          "prepared_before_memory_profile": true,
+          "hook_installed": true,
+          "query_calls": 14,
+          "query_calls_in_getter": 0,
+          "retained_query_tensors": 0,
+          "configured_workspace_bytes": 413138944,
+          "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+          "vllm_version": "0.28.0",
+          "startup_selection_seconds": 3.5518898660000104,
+          "native_memory_profile_completed": true,
+          "live_workspaces": [
+            {
+              "pointer": 24872222720,
+              "nbytes": 33554432
+            }
+          ],
+          "live_workspace_count": 1
+        }
+      },
+      "scheduler": {
+        "source": "worker.vllm_config.scheduler_config",
+        "scheduler_reserve_full_isl": true,
+        "max_num_seqs": 4,
+        "max_num_batched_tokens": 512,
+        "enable_chunked_prefill": true,
+        "policy": "fcfs",
+        "watermark": 0.0,
+        "max_model_len": 16512
+      },
+      "capacity_boundary_observation": {
+        "required_tokens": 66048,
+        "required_prompt_tokens": 65536,
+        "actual_token_capacity": 75440,
+        "mode": "auto",
+        "expected_side": "at_or_above_required",
+        "expected_side_met": true,
+        "status": "side_observed",
+        "automatic_cache_adjustment": false,
+        "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+      },
+      "actual_workspace": {
+        "builders": [
+          {
+            "group_index": 0,
+            "attention_index": 0,
+            "builder_index": 0,
+            "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+            "pointer": 24872222720,
+            "nbytes": 33554432
+          }
+        ],
+        "unique_buffers": [
+          {
+            "pointer": 24872222720,
+            "nbytes": 33554432
+          }
+        ],
+        "unique_count": 1,
+        "total_bytes": 33554432,
+        "expected_bytes": 33554432,
+        "validated": true
+      },
+      "kv": {
+        "num_blocks": 4715,
+        "block_size": 16,
+        "total_tensor_bytes": 2163015680,
+        "token_capacity": 75440,
+        "max_concurrency": 4.5687984496124034,
+        "configured_memory_bytes": null,
+        "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+        "allocation_mode": "automatic_gpu_memory_utilization"
+      },
+      "automatic_memory": {
+        "gpu_memory_utilization": 0.65,
+        "requested_memory": 5580390400,
+        "available_kv_cache_memory_bytes": 2163343360,
+        "cudagraph_memory_estimate": 88080384
+      }
+    }
+  ],
+  "requested_engine": {
+    "dtype": "bfloat16",
+    "kv_cache_dtype": "auto",
+    "kv_cache_memory_bytes": null,
+    "block_size": 16,
+    "max_model_len": 16512,
+    "max_num_seqs": 4,
+    "max_num_batched_tokens": 512,
+    "tensor_parallel_size": 1,
+    "seed": 20261021,
+    "enforce_eager": false,
+    "enable_prefix_caching": false,
+    "enable_chunked_prefill": true,
+    "disable_log_stats": false,
+    "trust_remote_code": false,
+    "gpu_memory_utilization": 0.65,
+    "compilation_config": {
+      "mode": 0,
+      "cudagraph_mode": "FULL_DECODE_ONLY",
+      "cudagraph_capture_sizes": [
+        1,
+        4
+      ]
+    },
+    "worker_cls": "startup_worker.AutoWorkspaceWorker",
+    "model": "/mnt/d/Models/Qwen2.5-1.5B-Instruct",
+    "attention_config": {
+      "backend": "FLASHINFER"
+    }
+  },
+  "initialization_seconds": 59.47225069499996
+}

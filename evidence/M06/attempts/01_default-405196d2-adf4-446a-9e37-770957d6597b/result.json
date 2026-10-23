@@ -1,0 +1,1525 @@
+{
+  "stage": "FI-S03-M06",
+  "job": "01_DEFAULT",
+  "job_id": "01_DEFAULT",
+  "backend": "FLASHINFER",
+  "phase": "capacity",
+  "workspace_mib": 394,
+  "passed": true,
+  "manifest_sha256": "cb4e71e34bae3ae474e58c48d7c15f0eaceec6b7ea46d3fb857f8395b535b3d9",
+  "protocol_sha256": "ebacd2bfd8b46ba14f4ae0470249bce3fdb3557bbb8e5f02ed4077b0b59ac5bf",
+  "inputs_sha256": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8",
+  "cases": [
+    {
+      "case_id": "L16384_B4",
+      "path": "cases/L16384_B4.json",
+      "sha256": "1f9ebbaa53b02270688a6827c1c1aa754697c37828baeac1bc4bfb68d01513aa"
+    }
+  ],
+  "initialization_seconds": 59.46625898500001,
+  "workerpath_relative": "workerpath.json",
+  "workerpath_sha256": "11242f0d92e3f862d18860afc4b14fa3db992e46281b00db0e7a0dff2bd9048b",
+  "case_order": [
+    "L16384_B4"
+  ],
+  "quality_results": [
+    {
+      "case_id": "QUALITY_ARITH",
+      "scope": "short",
+      "input_token_count": 36,
+      "text": "15",
+      "token_ids": [
+        16,
+        20,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "0",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792777722.8385088,
+          "queued_ts": 136.841434162,
+          "scheduled_ts": 136.841455817,
+          "first_token_ts": 139.835507261,
+          "last_token_ts": 140.134815551,
+          "first_token_latency": 3.0090177059173584,
+          "num_generation_tokens": 3,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 2.165499998341147e-05,
+          "prefill_seconds": 2.9940514440000072,
+          "decode_seconds": 0.29930828999999903,
+          "engine_queued_to_last_token_seconds": 3.2933813889999897,
+          "inference_seconds": 3.2933597340000063,
+          "ttft_seconds": 3.0090177059173584,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 3,
+      "selected_logprobs": [
+        -0.0009976415894925594,
+        -1.311301275563892e-06,
+        -0.0007786102942191064
+      ],
+      "selected_token_logprobs": [
+        -0.0009976415894925594,
+        -1.311301275563892e-06,
+        -0.0007786102942191064
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LOOKUP",
+      "scope": "short",
+      "input_token_count": 77,
+      "text": "```json\n{\n  \"owner\": \"小陈\",\n  \"count\": 23\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        8118,
+        788,
+        330,
+        30709,
+        100348,
+        756,
+        220,
+        330,
+        1830,
+        788,
+        220,
+        17,
+        18,
+        198,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "1",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792777726.147509,
+          "queued_ts": 140.152734199,
+          "scheduled_ts": 140.152742314,
+          "first_token_ts": 140.179946439,
+          "last_token_ts": 140.570547692,
+          "first_token_latency": 0.044318437576293945,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 8.11499998576437e-06,
+          "prefill_seconds": 0.027204124999997248,
+          "decode_seconds": 0.3906012529999998,
+          "engine_queued_to_last_token_seconds": 0.4178134929999828,
+          "inference_seconds": 0.41780537799999706,
+          "ttft_seconds": 0.044318437576293945,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.017340010032057762,
+        -1.2159273865108844e-05,
+        -2.1457441107486375e-05,
+        -0.0018615075387060642,
+        -0.05035315081477165,
+        -0.0011741180205717683,
+        -2.1815061700181104e-05,
+        -7.510157047363464e-06,
+        -8.856858039507642e-05,
+        -7.033100700937212e-05,
+        -1.2755313036905136e-05,
+        -4.410734163684538e-06,
+        -5.960462772236497e-07,
+        -6.9141146923357155e-06,
+        -8.344646857949556e-07,
+        -9.536738616588991e-07,
+        -0.0002037079248111695,
+        -1.7762025890988298e-05,
+        -2.145764938177308e-06,
+        -5.340433563105762e-05,
+        -3.6954811548639555e-06,
+        -0.0001234931987710297,
+        -6.770858453819528e-05
+      ],
+      "selected_token_logprobs": [
+        -0.017340010032057762,
+        -1.2159273865108844e-05,
+        -2.1457441107486375e-05,
+        -0.0018615075387060642,
+        -0.05035315081477165,
+        -0.0011741180205717683,
+        -2.1815061700181104e-05,
+        -7.510157047363464e-06,
+        -8.856858039507642e-05,
+        -7.033100700937212e-05,
+        -1.2755313036905136e-05,
+        -4.410734163684538e-06,
+        -5.960462772236497e-07,
+        -6.9141146923357155e-06,
+        -8.344646857949556e-07,
+        -9.536738616588991e-07,
+        -0.0002037079248111695,
+        -1.7762025890988298e-05,
+        -2.145764938177308e-06,
+        -5.340433563105762e-05,
+        -3.6954811548639555e-06,
+        -0.0001234931987710297,
+        -6.770858453819528e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LATEST",
+      "scope": "short",
+      "input_token_count": 90,
+      "text": "```json\n{\n  \"version\": 3,\n  \"status\": \"已出库\"\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        4366,
+        788,
+        220,
+        18,
+        345,
+        220,
+        330,
+        2829,
+        788,
+        330,
+        36667,
+        20221,
+        44956,
+        698,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "2",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792777726.583515,
+          "queued_ts": 140.588489244,
+          "scheduled_ts": 140.588499989,
+          "first_token_ts": 140.621495311,
+          "last_token_ts": 140.967581937,
+          "first_token_latency": 0.050011634826660156,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 1.0745000025735862e-05,
+          "prefill_seconds": 0.03299532199997657,
+          "decode_seconds": 0.34608662600001594,
+          "engine_queued_to_last_token_seconds": 0.37909269300001824,
+          "inference_seconds": 0.3790819479999925,
+          "ttft_seconds": 0.050011634826660156,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.017996829003095627,
+        -7.128461584215984e-05,
+        -6.842378934379667e-05,
+        -0.10121935606002808,
+        -0.023699460551142693,
+        -0.0024917051196098328,
+        -2.8967437174287625e-05,
+        -4.0649541915627196e-05,
+        -0.008061964064836502,
+        -0.0035675233229994774,
+        -0.00040975757292471826,
+        -8.344646857949556e-07,
+        -6.198863957251888e-06,
+        -1.4305104514278355e-06,
+        -1.311301275563892e-06,
+        -1.3708974620385561e-05,
+        -0.007055368740111589,
+        -1.5616295058862306e-05,
+        -3.576272320060525e-06,
+        -4.708655978902243e-05,
+        -3.302042750874534e-05,
+        -0.0007102350937202573,
+        -8.21318244561553e-05
+      ],
+      "selected_token_logprobs": [
+        -0.017996829003095627,
+        -7.128461584215984e-05,
+        -6.842378934379667e-05,
+        -0.10121935606002808,
+        -0.023699460551142693,
+        -0.0024917051196098328,
+        -2.8967437174287625e-05,
+        -4.0649541915627196e-05,
+        -0.008061964064836502,
+        -0.0035675233229994774,
+        -0.00040975757292471826,
+        -8.344646857949556e-07,
+        -6.198863957251888e-06,
+        -1.4305104514278355e-06,
+        -1.311301275563892e-06,
+        -1.3708974620385561e-05,
+        -0.007055368740111589,
+        -1.5616295058862306e-05,
+        -3.576272320060525e-06,
+        -4.708655978902243e-05,
+        -3.302042750874534e-05,
+        -0.0007102350937202573,
+        -8.21318244561553e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LONG_LOOKUP",
+      "scope": "long",
+      "input_token_count": 8192,
+      "text": "```json\n{\n  \"owner\": \"小郑\",\n  \"count\": 47\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        8118,
+        788,
+        330,
+        30709,
+        100778,
+        756,
+        220,
+        330,
+        1830,
+        788,
+        220,
+        19,
+        22,
+        198,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "3",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792777726.980615,
+          "queued_ts": 140.983041164,
+          "scheduled_ts": 140.983049289,
+          "first_token_ts": 142.022434872,
+          "last_token_ts": 142.34015641,
+          "first_token_latency": 1.0539133548736572,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 8.124999993697202e-06,
+          "prefill_seconds": 1.0393855829999836,
+          "decode_seconds": 0.3177215380000007,
+          "engine_queued_to_last_token_seconds": 1.357115245999978,
+          "inference_seconds": 1.3571071209999843,
+          "ttft_seconds": 1.0539133548736572,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.4789573550224304,
+        -3.373566141817719e-05,
+        -3.4570634852570947e-06,
+        -0.0007017772295512259,
+        -0.006419276352971792,
+        -3.6238969187252223e-05,
+        -5.245195097813848e-06,
+        -3.3378546504536644e-06,
+        -6.4490144723095e-05,
+        -0.10871531069278717,
+        -0.4909927248954773,
+        -0.000503770774230361,
+        -1.1920922133867862e-06,
+        0.0,
+        0.0,
+        -4.768370445162873e-07,
+        -0.0016067225951701403,
+        -0.07803107053041458,
+        -0.0011828100541606545,
+        -7.688703772146255e-05,
+        -9.894321920000948e-06,
+        -5.2569914259947836e-05,
+        -5.113947918289341e-05
+      ],
+      "selected_token_logprobs": [
+        -0.4789573550224304,
+        -3.373566141817719e-05,
+        -3.4570634852570947e-06,
+        -0.0007017772295512259,
+        -0.006419276352971792,
+        -3.6238969187252223e-05,
+        -5.245195097813848e-06,
+        -3.3378546504536644e-06,
+        -6.4490144723095e-05,
+        -0.10871531069278717,
+        -0.4909927248954773,
+        -0.000503770774230361,
+        -1.1920922133867862e-06,
+        0.0,
+        0.0,
+        -4.768370445162873e-07,
+        -0.0016067225951701403,
+        -0.07803107053041458,
+        -0.0011828100541606545,
+        -7.688703772146255e-05,
+        -9.894321920000948e-06,
+        -5.2569914259947836e-05,
+        -5.113947918289341e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LONG_LATEST",
+      "scope": "long",
+      "input_token_count": 8192,
+      "text": "```json\n{\n  \"version\": 3,\n  \"status\": \"已出库\"\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        4366,
+        788,
+        220,
+        18,
+        345,
+        220,
+        330,
+        2829,
+        788,
+        330,
+        36667,
+        20221,
+        44956,
+        698,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "4",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792777728.353113,
+          "queued_ts": 142.354284497,
+          "scheduled_ts": 142.354291441,
+          "first_token_ts": 143.387313929,
+          "last_token_ts": 143.704021502,
+          "first_token_latency": 1.04624605178833,
+          "num_generation_tokens": 23,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 6.943999977693238e-06,
+          "prefill_seconds": 1.0330224880000003,
+          "decode_seconds": 0.3167075730000022,
+          "engine_queued_to_last_token_seconds": 1.3497370049999802,
+          "inference_seconds": 1.3497300610000025,
+          "ttft_seconds": 1.04624605178833,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 23,
+      "selected_logprobs": [
+        -0.010648809373378754,
+        -8.320462075062096e-05,
+        -9.179073458653875e-06,
+        -0.004338376689702272,
+        -0.014452068135142326,
+        -0.0010346779599785805,
+        -3.969590397900902e-05,
+        -2.2172682292875834e-05,
+        -0.01417543739080429,
+        -0.6191967725753784,
+        -0.00031573555315844715,
+        -1.0728830375228426e-06,
+        -5.960462772236497e-07,
+        -4.768370445162873e-07,
+        -1.1920928244535389e-07,
+        -4.303362584323622e-05,
+        -0.712391197681427,
+        -0.007136567961424589,
+        -2.145764938177308e-06,
+        -0.00021336186910048127,
+        -1.4066597032069694e-05,
+        -5.8887653722194955e-05,
+        -5.757642793469131e-05
+      ],
+      "selected_token_logprobs": [
+        -0.010648809373378754,
+        -8.320462075062096e-05,
+        -9.179073458653875e-06,
+        -0.004338376689702272,
+        -0.014452068135142326,
+        -0.0010346779599785805,
+        -3.969590397900902e-05,
+        -2.2172682292875834e-05,
+        -0.01417543739080429,
+        -0.6191967725753784,
+        -0.00031573555315844715,
+        -1.0728830375228426e-06,
+        -5.960462772236497e-07,
+        -4.768370445162873e-07,
+        -1.1920928244535389e-07,
+        -4.303362584323622e-05,
+        -0.712391197681427,
+        -0.007136567961424589,
+        -2.145764938177308e-06,
+        -0.00021336186910048127,
+        -1.4066597032069694e-05,
+        -5.8887653722194955e-05,
+        -5.757642793469131e-05
+      ],
+      "logprobs_finite": true
+    },
+    {
+      "case_id": "QUALITY_LONG_COMBINE",
+      "scope": "long",
+      "input_token_count": 8192,
+      "text": "```json\n{\n  \"owner\": \"松林订单0045\",\n  \"count\": 29\n}\n```",
+      "token_ids": [
+        73594,
+        2236,
+        198,
+        515,
+        220,
+        330,
+        8118,
+        788,
+        330,
+        100180,
+        99463,
+        50410,
+        15,
+        15,
+        19,
+        20,
+        756,
+        220,
+        330,
+        1830,
+        788,
+        220,
+        17,
+        24,
+        198,
+        532,
+        73594,
+        151645
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "request_id": "5",
+      "request_metrics": {
+        "available": true,
+        "source": "RequestOutput.metrics / vllm.v1.metrics.stats.RequestStateStats",
+        "raw": {
+          "arrival_time": 1792777729.7175524,
+          "queued_ts": 143.718461406,
+          "scheduled_ts": 143.718470546,
+          "first_token_ts": 144.756351697,
+          "last_token_ts": 145.134911675,
+          "first_token_latency": 1.050783395767212,
+          "num_generation_tokens": 28,
+          "is_corrupted": false
+        },
+        "clock_domains": {
+          "arrival_time": "frontend_wall_clock",
+          "queued_ts": "engine_core_monotonic",
+          "scheduled_ts": "engine_core_monotonic",
+          "first_token_ts": "engine_core_monotonic",
+          "last_token_ts": "engine_core_monotonic",
+          "first_token_latency": "frontend_wall_clock_interval"
+        },
+        "derived": {
+          "queue_seconds": 9.140000003071691e-06,
+          "prefill_seconds": 1.0378811510000219,
+          "decode_seconds": 0.3785599779999984,
+          "engine_queued_to_last_token_seconds": 1.4164502690000234,
+          "inference_seconds": 1.4164411290000203,
+          "ttft_seconds": 1.050783395767212,
+          "frontend_end_to_end_seconds": null
+        },
+        "availability": {
+          "queue_seconds": true,
+          "prefill_seconds": true,
+          "decode_seconds": true,
+          "engine_queued_to_last_token_seconds": true,
+          "inference_seconds": true,
+          "ttft_seconds": true,
+          "frontend_end_to_end_seconds": false
+        },
+        "missing_fields": [],
+        "invalid_fields": [],
+        "uninitialized_fields": [],
+        "interval_scope": {
+          "native_record": "Native final RequestStateStats snapshot; event history and cumulative rescheduling waits are unavailable",
+          "queue_seconds": "Recorded queued_ts to first scheduled_ts; not cumulative waiting across preemptions",
+          "prefill_seconds": "First scheduling to first token, including any intervening preemption",
+          "decode_seconds": "First to last token, including any intervening preemption",
+          "engine_queued_to_last_token_seconds": "Recorded queued event to last generated token",
+          "inference_seconds": "First scheduling to last generated token",
+          "ttft_seconds": "Native frontend arrival-to-first-output latency interval"
+        },
+        "note": "TTFT uses native first_token_latency; engine intervals use monotonic timestamps only. Per-request frontend completion is unavailable; whole-batch elapsed uses perf_counter separately."
+      },
+      "generated_token_count": 28,
+      "selected_logprobs": [
+        -0.02094554714858532,
+        -3.540453326422721e-05,
+        -4.0531076592742465e-06,
+        -0.530498743057251,
+        -0.020939942449331284,
+        -4.6967357775429264e-05,
+        -0.00010573305189609528,
+        -9.179073458653875e-06,
+        -0.00032455421751365066,
+        -0.5078964233398438,
+        0.0,
+        -0.00016258825780823827,
+        -0.0034159424249082804,
+        -0.06392426788806915,
+        -0.8473741412162781,
+        -0.6390079855918884,
+        -0.476755827665329,
+        -7.986990567587782e-06,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -0.0013809201773256063,
+        -0.16432158648967743,
+        -0.10255038738250732,
+        -0.00018463814922142774,
+        -4.446407547220588e-05,
+        -0.00037377048283815384,
+        -7.426462980220094e-05
+      ],
+      "selected_token_logprobs": [
+        -0.02094554714858532,
+        -3.540453326422721e-05,
+        -4.0531076592742465e-06,
+        -0.530498743057251,
+        -0.020939942449331284,
+        -4.6967357775429264e-05,
+        -0.00010573305189609528,
+        -9.179073458653875e-06,
+        -0.00032455421751365066,
+        -0.5078964233398438,
+        0.0,
+        -0.00016258825780823827,
+        -0.0034159424249082804,
+        -0.06392426788806915,
+        -0.8473741412162781,
+        -0.6390079855918884,
+        -0.476755827665329,
+        -7.986990567587782e-06,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -1.1920928244535389e-07,
+        -0.0013809201773256063,
+        -0.16432158648967743,
+        -0.10255038738250732,
+        -0.00018463814922142774,
+        -4.446407547220588e-05,
+        -0.00037377048283815384,
+        -7.426462980220094e-05
+      ],
+      "logprobs_finite": true
+    }
+  ],
+  "quality_inputs_sha256": "fe804b0f7c4a5ef0194abd27b8f674740b3c72306f05daabf97e6c048d665594",
+  "concurrent_quality": {
+    "inputs_sha256": "8bdc9c239fe93dc6e509aabdb32317daf370f52c2de51c6fb6a0112f151aa15d",
+    "measurement_repeats": 2,
+    "collection_complete": true,
+    "cases": [
+      {
+        "case_id": "CQ_LOOKUP_SLOT4",
+        "path": "concurrent-quality/CQ_LOOKUP_SLOT4.json",
+        "sha256": "2ee1d0b70c691ca9efafeb0ae38fb075f0b09be996020ab54659bef67a7aa77a"
+      },
+      {
+        "case_id": "CQ_LATEST_SLOT4",
+        "path": "concurrent-quality/CQ_LATEST_SLOT4.json",
+        "sha256": "99f680da7600432d5a83537453ae12f690c5ebadedb7fce9219a93c713ece4d8"
+      },
+      {
+        "case_id": "CQ_COMBINE_SLOT4",
+        "path": "concurrent-quality/CQ_COMBINE_SLOT4.json",
+        "sha256": "86f6604020fd9acf0e4ed048d4238a78ed55351c1186c614ec85296856c81ee4"
+      },
+      {
+        "case_id": "CQ_LOOKUP_SLOT1",
+        "path": "concurrent-quality/CQ_LOOKUP_SLOT1.json",
+        "sha256": "aefe0dd52b2b68b9cbae88ded4dbb03212ff3f659ecbb2a89e3a87200d309361"
+      }
+    ],
+    "scenario_summaries": [
+      {
+        "case_id": "CQ_LOOKUP_SLOT4",
+        "qa_slot": 4,
+        "measurement_count": 2,
+        "answer_correct_count": 0,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      },
+      {
+        "case_id": "CQ_LATEST_SLOT4",
+        "qa_slot": 4,
+        "measurement_count": 2,
+        "answer_correct_count": 2,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      },
+      {
+        "case_id": "CQ_COMBINE_SLOT4",
+        "qa_slot": 4,
+        "measurement_count": 2,
+        "answer_correct_count": 0,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      },
+      {
+        "case_id": "CQ_LOOKUP_SLOT1",
+        "qa_slot": 1,
+        "measurement_count": 2,
+        "answer_correct_count": 0,
+        "normal_eos_count": 2,
+        "finite_logprob_count": 2
+      }
+    ],
+    "timing_scope": "QA can stop before 128 tokens; these mixed batches are separate from fixed-work performance timing."
+  },
+  "startup_workspace": {
+    "mode": "default",
+    "decisions": [
+      {
+        "status": "default",
+        "chosen_bytes": 413138944,
+        "configured_bytes": 413138944,
+        "observedsource": "native FlashInferMetadataBuilder._get_workspace_buffer",
+        "limits": {},
+        "fallback": null,
+        "query": null,
+        "source": {
+          "query_method": "native_default_no_query",
+          "upper_bound_source_sha256": null,
+          "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+          "source_verification": {}
+        }
+      }
+    ],
+    "allocation_events": [],
+    "worker_health": {
+      "worker_class": "startup_worker.AutoWorkspaceWorker",
+      "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+      "rank": 0,
+      "pid": 413,
+      "prepared_before_memory_profile": true,
+      "hook_installed": false,
+      "query_calls": 0,
+      "query_calls_in_getter": 0,
+      "retained_query_tensors": 0,
+      "configured_workspace_bytes": 413138944,
+      "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+      "vllm_version": "0.28.0",
+      "native_memory_profile_completed": true,
+      "live_workspaces": [
+        {
+          "pointer": 26696744960,
+          "nbytes": 413138944
+        }
+      ],
+      "live_workspace_count": 1
+    }
+  },
+  "scheduler": {
+    "source": "worker.vllm_config.scheduler_config",
+    "scheduler_reserve_full_isl": true,
+    "max_num_seqs": 4,
+    "max_num_batched_tokens": 512,
+    "enable_chunked_prefill": true,
+    "policy": "fcfs",
+    "watermark": 0.0,
+    "max_model_len": 16512
+  },
+  "capacity_boundary_observation": {
+    "required_tokens": 66048,
+    "required_prompt_tokens": 65536,
+    "actual_token_capacity": 62208,
+    "mode": "default",
+    "expected_side": "below_required",
+    "expected_side_met": true,
+    "status": "side_observed",
+    "automatic_cache_adjustment": false,
+    "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+  },
+  "actual_workspace": {
+    "builders": [
+      {
+        "group_index": 0,
+        "attention_index": 0,
+        "builder_index": 0,
+        "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+        "pointer": 26696744960,
+        "nbytes": 413138944
+      }
+    ],
+    "unique_buffers": [
+      {
+        "pointer": 26696744960,
+        "nbytes": 413138944
+      }
+    ],
+    "unique_count": 1,
+    "total_bytes": 413138944,
+    "expected_bytes": 413138944,
+    "validated": true
+  },
+  "kv": {
+    "num_blocks": 3888,
+    "block_size": 16,
+    "total_tensor_bytes": 1783627776,
+    "token_capacity": 62208,
+    "max_concurrency": 3.7674418604651163,
+    "configured_memory_bytes": null,
+    "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+    "allocation_mode": "automatic_gpu_memory_utilization"
+  },
+  "planning": {
+    "before": {
+      "startup_workspace": {
+        "mode": "default",
+        "decisions": [
+          {
+            "status": "default",
+            "chosen_bytes": 413138944,
+            "configured_bytes": 413138944,
+            "observedsource": "native FlashInferMetadataBuilder._get_workspace_buffer",
+            "limits": {},
+            "fallback": null,
+            "query": null,
+            "source": {
+              "query_method": "native_default_no_query",
+              "upper_bound_source_sha256": null,
+              "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+              "source_verification": {}
+            }
+          }
+        ],
+        "allocation_events": [],
+        "worker_health": {
+          "worker_class": "startup_worker.AutoWorkspaceWorker",
+          "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+          "rank": 0,
+          "pid": 413,
+          "prepared_before_memory_profile": true,
+          "hook_installed": false,
+          "query_calls": 0,
+          "query_calls_in_getter": 0,
+          "retained_query_tensors": 0,
+          "configured_workspace_bytes": 413138944,
+          "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+          "vllm_version": "0.28.0",
+          "native_memory_profile_completed": true,
+          "live_workspaces": [
+            {
+              "pointer": 26696744960,
+              "nbytes": 413138944
+            }
+          ],
+          "live_workspace_count": 1
+        }
+      },
+      "scheduler": {
+        "source": "worker.vllm_config.scheduler_config",
+        "scheduler_reserve_full_isl": true,
+        "max_num_seqs": 4,
+        "max_num_batched_tokens": 512,
+        "enable_chunked_prefill": true,
+        "policy": "fcfs",
+        "watermark": 0.0,
+        "max_model_len": 16512
+      },
+      "capacity_boundary_observation": {
+        "required_tokens": 66048,
+        "required_prompt_tokens": 65536,
+        "actual_token_capacity": 62208,
+        "mode": "default",
+        "expected_side": "below_required",
+        "expected_side_met": true,
+        "status": "side_observed",
+        "automatic_cache_adjustment": false,
+        "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+      },
+      "actual_workspace": {
+        "builders": [
+          {
+            "group_index": 0,
+            "attention_index": 0,
+            "builder_index": 0,
+            "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+            "pointer": 26696744960,
+            "nbytes": 413138944
+          }
+        ],
+        "unique_buffers": [
+          {
+            "pointer": 26696744960,
+            "nbytes": 413138944
+          }
+        ],
+        "unique_count": 1,
+        "total_bytes": 413138944,
+        "expected_bytes": 413138944,
+        "validated": true
+      },
+      "kv": {
+        "num_blocks": 3888,
+        "block_size": 16,
+        "total_tensor_bytes": 1783627776,
+        "token_capacity": 62208,
+        "max_concurrency": 3.7674418604651163,
+        "configured_memory_bytes": null,
+        "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+        "allocation_mode": "automatic_gpu_memory_utilization"
+      },
+      "automatic_memory": {
+        "gpu_memory_utilization": 0.65,
+        "requested_memory": 5580390400,
+        "available_kv_cache_memory_bytes": 1783758848,
+        "cudagraph_memory_estimate": 467664896
+      }
+    },
+    "after": {
+      "startup_workspace": {
+        "mode": "default",
+        "decisions": [
+          {
+            "status": "default",
+            "chosen_bytes": 413138944,
+            "configured_bytes": 413138944,
+            "observedsource": "native FlashInferMetadataBuilder._get_workspace_buffer",
+            "limits": {},
+            "fallback": null,
+            "query": null,
+            "source": {
+              "query_method": "native_default_no_query",
+              "upper_bound_source_sha256": null,
+              "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+              "source_verification": {}
+            }
+          }
+        ],
+        "allocation_events": [],
+        "worker_health": {
+          "worker_class": "startup_worker.AutoWorkspaceWorker",
+          "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+          "rank": 0,
+          "pid": 413,
+          "prepared_before_memory_profile": true,
+          "hook_installed": false,
+          "query_calls": 0,
+          "query_calls_in_getter": 0,
+          "retained_query_tensors": 0,
+          "configured_workspace_bytes": 413138944,
+          "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+          "vllm_version": "0.28.0",
+          "native_memory_profile_completed": true,
+          "live_workspaces": [
+            {
+              "pointer": 26696744960,
+              "nbytes": 413138944
+            }
+          ],
+          "live_workspace_count": 1
+        }
+      },
+      "scheduler": {
+        "source": "worker.vllm_config.scheduler_config",
+        "scheduler_reserve_full_isl": true,
+        "max_num_seqs": 4,
+        "max_num_batched_tokens": 512,
+        "enable_chunked_prefill": true,
+        "policy": "fcfs",
+        "watermark": 0.0,
+        "max_model_len": 16512
+      },
+      "capacity_boundary_observation": {
+        "required_tokens": 66048,
+        "required_prompt_tokens": 65536,
+        "actual_token_capacity": 62208,
+        "mode": "default",
+        "expected_side": "below_required",
+        "expected_side_met": true,
+        "status": "side_observed",
+        "automatic_cache_adjustment": false,
+        "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+      },
+      "actual_workspace": {
+        "builders": [
+          {
+            "group_index": 0,
+            "attention_index": 0,
+            "builder_index": 0,
+            "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+            "pointer": 26696744960,
+            "nbytes": 413138944
+          }
+        ],
+        "unique_buffers": [
+          {
+            "pointer": 26696744960,
+            "nbytes": 413138944
+          }
+        ],
+        "unique_count": 1,
+        "total_bytes": 413138944,
+        "expected_bytes": 413138944,
+        "validated": true
+      },
+      "kv": {
+        "num_blocks": 3888,
+        "block_size": 16,
+        "total_tensor_bytes": 1783627776,
+        "token_capacity": 62208,
+        "max_concurrency": 3.7674418604651163,
+        "configured_memory_bytes": null,
+        "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+        "allocation_mode": "automatic_gpu_memory_utilization"
+      },
+      "automatic_memory": {
+        "gpu_memory_utilization": 0.65,
+        "requested_memory": 5580390400,
+        "available_kv_cache_memory_bytes": 1783758848,
+        "cudagraph_memory_estimate": 467664896
+      }
+    }
+  },
+  "realpath": {
+    "attention_layers": [
+      [
+        {
+          "name": "model.layers.0.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.1.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.2.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.3.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.4.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.5.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.6.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.7.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.8.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.9.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.10.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.11.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.12.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.13.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.14.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.15.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.16.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.17.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.18.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.19.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.20.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.21.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.22.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.23.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.24.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.25.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.26.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        },
+        {
+          "name": "model.layers.27.self_attn.attn",
+          "backend": "FLASHINFER",
+          "implementation": "vllm.v1.attention.backends.flashinfer.FlashInferImpl"
+        }
+      ]
+    ],
+    "runtime": [
+      {
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+        "use_v2_model_runner": false,
+        "resolved_graph_mode": "FULL_DECODE_ONLY",
+        "dispatcher_graph_mode": "FULL_DECODE_ONLY",
+        "capture_sizes": [
+          1,
+          4
+        ],
+        "graph_wrappers": [
+          {
+            "class": "vllm.compilation.cuda_graph.CUDAGraphWrapper",
+            "runtime_mode": "FULL",
+            "entries": [
+              {
+                "descriptor": "BatchDescriptor(num_tokens=4, num_reqs=4, uniform=True, has_lora=False, num_active_loras=0)",
+                "captured": true
+              },
+              {
+                "descriptor": "BatchDescriptor(num_tokens=1, num_reqs=1, uniform=True, has_lora=False, num_active_loras=0)",
+                "captured": true
+              }
+            ]
+          }
+        ],
+        "flashinfer_package_file": "/mnt/f/FlashInferResearch/S02-D02/overlay/fixed/flashinfer/__init__.py",
+        "flashinfer_cache_root": "/mnt/f/FlashInferResearch/S02-D02/cache/fixed",
+        "mapped_isolated_kernel_files": [
+          "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False/batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_bf16_dtype_o_bf16_dtype_idx_i32_head_dim_qk_128_head_dim_vo_128_posenc_0_use_swa_False_use_logits_cap_False_f16qk_False.so",
+          "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/.cache/flashinfer/0.6.16.post3/89/cached_ops/sampling/sampling.so",
+          "/mnt/f/FlashInferResearch/S02-D02/cache/fixed/triton/MIH4X24CEAJDWYGXCZ4EKW6DTWSUG2ZBSBPV7NGI62HAUKJ7F7BQ/cuda_utils.cpython-312-x86_64-linux-gnu.so"
+        ],
+        "initialization_peak_allocated_bytes": 5476800000,
+        "initialization_peak_reserved_bytes": 5576327168,
+        "total_memory_bytes": 8585216000
+      }
+    ],
+    "planning": [
+      {
+        "startup_workspace": {
+          "mode": "default",
+          "decisions": [
+            {
+              "status": "default",
+              "chosen_bytes": 413138944,
+              "configured_bytes": 413138944,
+              "observedsource": "native FlashInferMetadataBuilder._get_workspace_buffer",
+              "limits": {},
+              "fallback": null,
+              "query": null,
+              "source": {
+                "query_method": "native_default_no_query",
+                "upper_bound_source_sha256": null,
+                "selector_sha256": "3154992efedee21d97e763f29220481ba72521f04d1ebddca4eed2482bf3bcd6",
+                "source_verification": {}
+              }
+            }
+          ],
+          "allocation_events": [],
+          "worker_health": {
+            "worker_class": "startup_worker.AutoWorkspaceWorker",
+            "model_runner_class": "vllm.v1.worker.gpu_model_runner.GPUModelRunner",
+            "rank": 0,
+            "pid": 413,
+            "prepared_before_memory_profile": true,
+            "hook_installed": false,
+            "query_calls": 0,
+            "query_calls_in_getter": 0,
+            "retained_query_tensors": 0,
+            "configured_workspace_bytes": 413138944,
+            "configuration_authorization": "FI_STARTUP_WORKSPACE_MODE experiment environment",
+            "vllm_version": "0.28.0",
+            "native_memory_profile_completed": true,
+            "live_workspaces": [
+              {
+                "pointer": 26696744960,
+                "nbytes": 413138944
+              }
+            ],
+            "live_workspace_count": 1
+          }
+        },
+        "scheduler": {
+          "source": "worker.vllm_config.scheduler_config",
+          "scheduler_reserve_full_isl": true,
+          "max_num_seqs": 4,
+          "max_num_batched_tokens": 512,
+          "enable_chunked_prefill": true,
+          "policy": "fcfs",
+          "watermark": 0.0,
+          "max_model_len": 16512
+        },
+        "capacity_boundary_observation": {
+          "required_tokens": 66048,
+          "required_prompt_tokens": 65536,
+          "actual_token_capacity": 62208,
+          "mode": "default",
+          "expected_side": "below_required",
+          "expected_side_met": true,
+          "status": "side_observed",
+          "automatic_cache_adjustment": false,
+          "note": "Cross-configuration boundary requires observed default capacity < 66048 <= observed automatic capacity"
+        },
+        "actual_workspace": {
+          "builders": [
+            {
+              "group_index": 0,
+              "attention_index": 0,
+              "builder_index": 0,
+              "builder_class": "vllm.v1.attention.backends.flashinfer.FlashInferMetadataBuilder",
+              "pointer": 26696744960,
+              "nbytes": 413138944
+            }
+          ],
+          "unique_buffers": [
+            {
+              "pointer": 26696744960,
+              "nbytes": 413138944
+            }
+          ],
+          "unique_count": 1,
+          "total_bytes": 413138944,
+          "expected_bytes": 413138944,
+          "validated": true
+        },
+        "kv": {
+          "num_blocks": 3888,
+          "block_size": 16,
+          "total_tensor_bytes": 1783627776,
+          "token_capacity": 62208,
+          "max_concurrency": 3.7674418604651163,
+          "configured_memory_bytes": null,
+          "capacity_source": "vllm.v1.core.kv_cache_utils.get_kv_cache_capacity",
+          "allocation_mode": "automatic_gpu_memory_utilization"
+        },
+        "automatic_memory": {
+          "gpu_memory_utilization": 0.65,
+          "requested_memory": 5580390400,
+          "available_kv_cache_memory_bytes": 1783758848,
+          "cudagraph_memory_estimate": 467664896
+        }
+      }
+    ],
+    "requested_engine": {
+      "dtype": "bfloat16",
+      "kv_cache_dtype": "auto",
+      "kv_cache_memory_bytes": null,
+      "block_size": 16,
+      "max_model_len": 16512,
+      "max_num_seqs": 4,
+      "max_num_batched_tokens": 512,
+      "tensor_parallel_size": 1,
+      "seed": 20261021,
+      "enforce_eager": false,
+      "enable_prefix_caching": false,
+      "enable_chunked_prefill": true,
+      "disable_log_stats": false,
+      "trust_remote_code": false,
+      "gpu_memory_utilization": 0.65,
+      "compilation_config": {
+        "mode": 0,
+        "cudagraph_mode": "FULL_DECODE_ONLY",
+        "cudagraph_capture_sizes": [
+          1,
+          4
+        ]
+      },
+      "worker_cls": "startup_worker.AutoWorkspaceWorker",
+      "model": "/mnt/d/Models/Qwen2.5-1.5B-Instruct",
+      "attention_config": {
+        "backend": "FLASHINFER"
+      }
+    },
+    "initialization_seconds": 59.46625898500001
+  },
+  "memory": {
+    "worker_process": [
+      {
+        "scope": "entire current model-worker process including initialization, warmups and generation",
+        "peak_allocated_bytes": 5480932864,
+        "peak_reserved_bytes": 5597298688,
+        "current_allocated_bytes": 5446065664,
+        "current_reserved_bytes": 5597298688
+      }
+    ],
+    "initialization_peak_allocated_bytes": 5476800000,
+    "initialization_peak_reserved_bytes": 5576327168,
+    "measurement_note": "Lifetime worker peak includes init, quality, warmups and generation; all RPC outside timing"
+  }
+}

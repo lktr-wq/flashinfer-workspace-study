@@ -1,0 +1,20 @@
+{
+  "stage": "FI-S03-M06",
+  "job": "03_STARTUP_AUTO",
+  "backend": "FLASHINFER",
+  "phase": "capacity",
+  "workspace_mib": 394,
+  "launch_id": "7247a551-514f-48fd-baf7-f3f138718f7a",
+  "attempt_id": "03_startup_auto-f9e9a271-71f8-4b4b-9cf8-8265a6add1a1",
+  "identities": {
+    "manifest_sha256": "cb4e71e34bae3ae474e58c48d7c15f0eaceec6b7ea46d3fb857f8395b535b3d9",
+    "protocol_sha256": "ebacd2bfd8b46ba14f4ae0470249bce3fdb3557bbb8e5f02ed4077b0b59ac5bf",
+    "inputs_sha256": "b4f45301c0e3b05b7032d52dcb8e6ebeb54eb3ceab68bf8a80a4bdcd1a118da8"
+  },
+  "passed": true,
+  "reason": "",
+  "result_sha256": "8c3414208b3412c01ec622a23ef03e72d28723cb831fe59afc1543de8db564c4",
+  "result_completed_before_cleanup": true,
+  "elapsed_seconds": 267.5352195659999,
+  "end_epoch": 1792778490.3860955
+}
